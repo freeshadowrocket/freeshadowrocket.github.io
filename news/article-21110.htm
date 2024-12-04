@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-21110.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>docker存储目录详解</title>
+        <meta name="description" content="目录 1、docker存储目录下各子目录详解 2、image目录详解  本次以Centos7.4版本为例，本地镜像的存储目录：/var/lib/docker/  [root@localhost ~]#" />
+        <link rel="icon" href="__ADDON__/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>docker存储目录详解</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                          				  				  				<div id="content_views" class="htmledit_views"> <p id="main-toc"><strong>目录</strong></p> <p id="1%E3%80%81docker%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%84%E5%AD%90%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3-toc" style="margin-left:0px;"><a href="#1%E3%80%81docker%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%84%E5%AD%90%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3" rel="nofollow">1、docker存储目录下各子目录详解</a></p> <p id="2%E3%80%81image%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3-toc" style="margin-left:0px;"><a href="#2%E3%80%81image%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3" rel="nofollow">2、image目录详解</a></p> <hr id="hr-toc"/> <p>本次以Centos7.4版本为例，本地镜像的存储目录：<strong><strong>/var/lib/docker/</strong></strong></p> </h1> <p>[root@localhost ~]#<strong><strong>cd /var/lib/docker</strong></strong></p> <p><strong><strong><strong><strong><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/b107c57fee88a8faca26475d80363357.jpg"></strong></strong></strong></strong></p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/cd36ebe181e5437f3421132f6507e5da.jpg"></p> <p><strong><strong>containers</strong></strong> 【里面都是容器，每启动一个容器便会在这里记录】</p> <blockquote> <ul> <li><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/061153b11142e8c89ea4b3878989cc70.jpg"></li> </ul> <ul> <li><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/efbccfc2879725e7b8c689e4024fb815.jpg"></li> </ul> </blockquote> <blockquote> <ul> <li><strong><strong>image</strong></strong><strong></strong><strong></strong><strong></strong> 【默认里面只有一个overlay2目录】</li> </ul> <p><strong><strong>/var/lib/docker/image/overlay2/</strong></strong><strong></strong><strong><strong>【存储镜像管理数据的目录，以使用的存储驱动</strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong><strong>命名，这是Centos系统，使用的驱动为overlay2】</strong></strong></p> <p><strong><strong><strong><strong><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/fd735e33f153206ba655c262b42bcde9.jpg"></strong></strong></strong></strong></p> </blockquote> <blockquote> <p><strong><strong>network</strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong><strong>【docker的网关、容器的IP地址等信息】</strong></strong></p> <p><strong><strong><strong><strong><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/4c6d5df94747925ea1ec09fb099a4d95.jpg"></strong></strong></strong></strong></p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/53d4d4182a23f1afb95c80bcebd309df.jpg"></p> </blockquote> <blockquote> <ul> <li><strong><strong>overlay2</strong></strong><strong></strong><strong></strong><strong><strong>【Docker存储驱动，常见的有overlay、overlay2、aufs】</strong></strong></li> <li><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/023279caa50f11a744b5a77265e6d599.jpg"></li> <li> <p>每启动一个容器就会有一个docker存储挂载，如上所示，他们是共用宿主机的存储，也就是这些docker存储的挂载除了挂载点不一样其他的都一样。<strong><strong>下面是关于存储挂载的测试：</strong></strong></p> </li> <li> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/4662361ab0fda40f2f518e54ee52f3a3.jpg"></p> <p>[root@localhost ~]#<strong><strong>dd if=/dev/zero of=/root/qq bs=1M count=5000</strong></strong><strong></strong></p> </li> </ul> <p><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【生成5G<strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>&nbsp;&nbsp;&nbsp;的qq测试文件】</strong></strong></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[root@localhost ~]#<strong><strong>docker cp /root/qq bc391cabe426://test1</strong></strong><strong><strong>【cp到容器里</strong></strong>】</p> <p style="margin-left:.0001pt;text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/166fe7e31163effa64263949df1d1fee.jpg"></p> <p>&nbsp;所有容器都共用一个存储，当一个容器有数据变化，那么连接容器的所有存储的挂载信息都会更新产生变化。</p> </blockquote> <blockquote> <p><strong><strong>volumes</strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong><strong>【卷管理】</strong></strong></p> </blockquote> </h1> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/b17b079fd8f3faddc6d500fca490b76f.jpg"></p> <ul> <li>/var/lib/docker/image/overlay2/<strong><strong>distribution</strong></strong>:<strong><strong>从远端拉到本地的镜像相关元数据</strong></strong></li> <li>/var/lib/docker/image/overlay2/<strong><strong>imagedb</strong></strong>:<strong></strong><strong></strong><strong></strong><strong><strong>镜像数据库</strong></strong></li> </ul> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/b241c33cddc45b448d99a6d8b839ba20.jpg"></p> <p>/var/lib/docker/image/overlay2/imagedb/<strong><strong>content</strong></strong>：</p> <p>每一个镜像都会配置digest，也就是镜像ID。Content目录里会看到一个sha256的目录，进入到该目录下，看到都是以镜像ID命名的文件，docker images看到的镜像ID的前12位就来自这个文件。</p> <p>/var/lib/docker/image/overlay2/imagedb/<strong><strong>metadata</strong></strong>：（略）</p> <ul> <li>/var/lib/docker/image/overlay2/<strong><strong>layerdb</strong></strong>:<strong></strong><strong><strong>镜像每个layer的元数据</strong>，Layer &nbsp;层，分层</strong></li> </ul> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/0e1ce83f5904807ad36f08e4e54855f7.jpg"></p> <p><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/var/lib/docker/image/overlay2/layerdb/</strong><strong>mounts</strong></strong><strong><strong>：</strong></strong></p> <p>每启动一个容器，该目录都会将容器的container ID记录下来，当容器被停止了，container ID依旧存在，当容器被删除了，container ID才会被清除。</p> <p><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/var/lib/docker/image/overlay2/layerdb/</strong><strong>sha256</strong></strong><strong><strong>：</strong></strong></p> <p><strong><strong><strong><strong><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/b3702bcd0cb37fc1a095e98d13caba0c.jpg"></strong></strong></strong></strong></p> <p>只记录镜像的信息，不记录容器的信息，当镜像有添加或删除时，此目录的信息会有更新</p> <ul> <li>/var/lib/docker/image/overlay2/<strong><strong>repositories.json</strong></strong>:<strong></strong><strong><strong>镜像的相关信息</strong></strong></li> </ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;记录了镜像的tag、镜像ID等信息</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-20649.htm">Linux网络服务之NFS共享服务</a></p>
+                                        <p>下一个：<a href="/news/article-21111.htm">河南十大兽药品牌公司（河南兽药排行前50名）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-8-13-free-shadowrocket-node.htm" title="「8月13日」最高速度22.1M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「8月13日」最高速度22.1M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share.htm" title="「11月29日」最高速度18.4M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「11月29日」最高速度18.4M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-14-node-share-links.htm" title="「9月14日」最高速度22.7M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「9月14日」最高速度22.7M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-14-free-node-subscribe.htm" title="「8月14日」最高速度20.6M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「8月14日」最高速度20.6M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-29-shadowrocket-node.htm" title="「8月29日」最高速度21M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「8月29日」最高速度21M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-node-subscribe-links.htm" title="「10月16日」最高速度18.5M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「10月16日」最高速度18.5M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21110.htm" title="docker存储目录详解">docker存储目录详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-2-clash-v2ray-ss-ssr.htm" title="「9月2日」最高速度21.6M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「9月2日」最高速度21.6M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-7-free-high-speed-nodes.htm" title="「10月7日」最高速度19.4M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「10月7日」最高速度19.4M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-free-ssr-subscribe.htm" title="「11月7日」最高速度19M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「11月7日」最高速度19M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
