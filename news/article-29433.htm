@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-29433.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>netty系列之:netty中的核心编码器base64</title>
+        <meta name="description" content="简介  我们知道数据在netty中传输是以ByteBuf的形式进行的,可以说ByteBuf是netty的数据传输基础。但是对于现代的应用程序来说，通常我们需要用到其他的数据结构或者类型。 为了方便我们" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>netty系列之:netty中的核心编码器base64</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div class="toc"> <div class="toc-container-header"><span style="font-size: 2em;">简介</span></div> </div> <p>我们知道数据在netty中传输是以ByteBuf的形式进行的,可以说ByteBuf是netty的数据传输基础。但是对于现代的应用程序来说，通常我们需要用到其他的数据结构或者类型。</p> <p>为了方便我们在程序中的编写，一种方式就是在将数据传入到netty中的时候由程序员自身将数据格式进行转换，然后再调用netty的系统方法。另外一种方式就是定义一些codec，由netty的内在编码机制将程序中用到的数据格式和ByteBuf进行自动转换。</p> <p>很明显，使用codec的方式更加简捷，也更加符合程序的开发规则。</p> <p>为了方便程序的开发，netty本身在内部定义了一些核心的codec插件，我们在需要的时候直接选用即可。</p> <p>本文将会讲解netty内部实现codec的方式和一个最核心的编码器base64。</p> </h1> <p>所有的netty codec的目的就是在数据传输过程中进行数据类型的转换，换句话说就是对数据进行处理。我们知道netty中有两个对数据进行handler的类，分别是ChannelInboundHandlerAdapter和ChannelOutboundHandlerAdapter，他们分别对应channel中的inbound消息和outbound消息进行处理。</p> <p>所以很自然的，我们的codec逻辑只需要在这两个地方添加即可。</p> <p>netty为我们提供了两个HandlerAdapter类的继承类，分别是MessageToMessageDecoder和MessageToMessageEncoder：</p> <pre><code>public abstract class MessageToMessageEncoder&lt;I&gt; extends ChannelOutboundHandlerAdapter   public abstract class MessageToMessageDecoder&lt;I&gt; extends ChannelInboundHandlerAdapter</code></pre> <p>从名字就可以看出来这两个类分别使用来编码和解码用的，所以我们的codec只需要分别实现这两个类即可。</p> <p>以下是一个StringToIntegerDecoder和IntegerToStringEncoder的例子：</p> <pre><code>       public class StringToIntegerDecoder extends                MessageToMessageDecoder&lt;String&gt; {                @Override            public void decode(ChannelHandlerContext ctx, String message,                               List&lt;Object&gt; out) throws Exception {                out.add(message.length());            }        }</code></pre> <pre><code>       public class IntegerToStringEncoder extends                MessageToMessageEncoder&lt;Integer&gt; {                @Override            public void encode(ChannelHandlerContext ctx, Integer message, List&lt;Object&gt; out)                    throws Exception {                out.add(message.toString());            }        }</code></pre> <p>最简单的实现就是分别重构这两个类的decode和encode方法。</p> </h1> <p>我们知道JDK中已经有了Base64实现的工具类叫做java.util.Base64。但是在netty中又使用了一个新的实现类同样叫做Base64，它的全称是io.netty.handler.codec.base64.Base64。</p> <p>这个Base64类中用到了一个Base64Dialect类，也就是netty中Base64支持的Base64编码方式。Base64Dialect中提供了下面的几种类型：</p> <pre><code>STANDARD URL_SAFE ORDERED</code></pre> <p>其中STANDARD对应的是RFC3548也是JDK中的标准Base64,URL_SAFE对应的是RFC3548中的base64url版本，对应的JDK中的getUrlEncode。</p> <p>最后一个是ORDERED，代表的是RFC1940,这个编码实现在JDK中是没有的。</p> <p>为什么JDK中已经有了Base64的工具类，netty中还需要自己创建一个新的类呢？</p> <p>我们可以考虑一下在netty中Base64用到的场景，通常来说我们是在handler中添加自定义编码，而这些handler主要是针对于数据流进行处理。</p> <p>JDK中自带的Base64实现在定长的数据上使用还是没问题的，但是如果运用于数据流的处理话，效率就会比较低。所以Netty才需要为base64在流数据的情况下重新实现一个Base64类。</p> <p>netty中的实现方式使用的是Robert Harder's Public Domain Base64 Encoder/Decoder。这里就不多讲这个算法的实现逻辑了。感兴趣的朋友可以自行探索。</p> <p>Base64提供了将ByteBuf进行base64编码和解码的方法，我们选择参数最长的方法来观察，如下所示：</p> <pre><code>    public static ByteBuf encode(             ByteBuf src, int off, int len, boolean breakLines, Base64Dialect dialect, ByteBufAllocator allocator)      public static ByteBuf decode(             ByteBuf src, int off, int len, Base64Dialect dialect, ByteBufAllocator allocator)</code></pre> <p>对于encode方法来说，需要下面几个参数：</p> <ol> <li>ByteBuf类型的src，这是我们需要进行编码的源。</li> <li>int类型的off和len，表示的是ByteBuf中要编码数据的位置。</li> <li>boolean类型的breakLines,表示是否添加换行符。</li> <li>Base64Dialect类型的dialect，表示选择的base64编码类型。</li> <li>ByteBufAllocator的allocator，表示返回的ByteBuf的生成方式。</li> </ol> <p>同样的Decode方法，需要下面的几个参数：</p> <ol> <li>ByteBuf类型的src，这是我们需要进行解码的源。</li> <li>int类型的off和len，表示的是ByteBuf中要解码数据的位置。</li> <li>Base64Dialect类型的dialect，表示选择的base64编码类型。</li> <li>ByteBufAllocator的allocator，表示返回的ByteBuf的生成方式。</li> </ol> </h1> <p>刚刚我们介绍了netty中提供的新的Base64工具类，这个工具类提供了将ByteBuf中数据进行编码和解码的方法。接下来我们看一下netty是如何使用这个工具类实现netty中的base64编码和解码器。</p> <p>netty中提供了对Base64的编码和解码器，分别是Base64Encoder和Base64Decoder, 先来看下Base64编码解码器的基本使用：</p> <pre><code>   ChannelPipeline pipeline = ...;       // Decoders    pipeline.addLast("frameDecoder", new DelimiterBasedFrameDecoder(80, Delimiters.nulDelimiter()));    pipeline.addLast("base64Decoder", new Base64Decoder());       // Encoder    pipeline.addLast("base64Encoder", new Base64Encoder());</code></pre> <p>用起来很简单，只需要把Base64Decoder和Base64Encoder添加到pipeline中即可。</p> <p>有时候Base64Decoder需要和DelimiterBasedFrameDecoder一起使用，尤其是在TCP/IP协议中，因为我们需要根据特定的Delimiters来判断ByteBuf应该被分割为几个frames。这样才能保证数据的有效性。</p> <h2 id="base64encoder">Base64Encoder</h2> <p>首先来看base64的编码器，Base64Encoder的实现比较简单，首先来看下Base64Encoder的定义：</p> <pre><code>public class Base64Encoder extends MessageToMessageEncoder&lt;ByteBuf&gt;</code></pre> <p>Base64Encoder继承自MessageToMessageEncoder，它传入的泛型ByteBuf，表示是将ByteBuf编码为ByteBuf，虽然外部的ByteBuf类型没有变化，但是ByteBuf中的数据已经被编码成为Base64了。</p> <p>接下来是Base64Encoder的构造函数：</p> <pre><code>    public Base64Encoder(boolean breakLines, Base64Dialect dialect) {         this.dialect = ObjectUtil.checkNotNull(dialect, "dialect");         this.breakLines = breakLines;     }</code></pre> <p>Base64Encoder可以接受两个参数，分别是是否有换行符的breakLines和base64编码方式的Base64Dialect。</p> <p>它的encode方法也很简单：</p> <pre><code>    protected void encode(ChannelHandlerContext ctx, ByteBuf msg, List&lt;Object&gt; out) throws Exception {         out.add(Base64.encode(msg, msg.readerIndex(), msg.readableBytes(), breakLines, dialect));     }</code></pre> <p>直接使用的是我们上面讲到的Base64工具类的encode方法，然后把返回值添加到out对象中。</p> <h2 id="base64decoder">Base64Decoder</h2> <p>Base64Decoder用来将ByteBuf中的base64编码的内容解码成为原始内容，先来看下Base64Decoder的定义：</p> <pre><code>public class Base64Decoder extends MessageToMessageDecoder&lt;ByteBuf&gt;</code></pre> <p>Base64Decoder继承了MessageToMessageDecoder，传入的泛型是ByteBuf。</p> <p>先看下Base64Decoder的构造函数：</p> <pre><code>public Base64Decoder(Base64Dialect dialect) {         this.dialect = ObjectUtil.checkNotNull(dialect, "dialect");     }</code></pre> <p>Base64Decoder的构造函数很简单，和Base64Encoder相比它只需要一个参数就是Base64Dialect类型的dialect，表示的是选择的base64解码的方式。</p> <p>接下来就是它的解码方法：</p> <pre><code>    protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List&lt;Object&gt; out) throws Exception {         out.add(Base64.decode(msg, msg.readerIndex(), msg.readableBytes(), dialect));     }</code></pre> <p>解码方法也是调用Base64工具类的decode方法，然后将其添加到返回的out list中去。</p> </h1> <p>本章介绍了netty中的核心编码器Base64,它负责将ByteBuf中的消息编码为base64格式，同时提供了对应的解码器，大家可以在需要的时候进行使用。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-29432.htm">echarts根据数据动态生成不同条数的折线图</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-20190.htm" title="git下载安装教程">git下载安装教程</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-shadowrocket-node.htm" title="「10月18日」最高速度18.6M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「10月18日」最高速度18.6M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-15-free-ssr-node.htm" title="「8月15日」最高速度22.6M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「8月15日」最高速度22.6M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-node-subscribe-links.htm" title="「10月16日」最高速度18.5M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「10月16日」最高速度18.5M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-free-node-subscribe-links.htm" title="「12月22日」最高速度18.2M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费订阅地址分享">「12月22日」最高速度18.2M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-21-free-subscribe-node.htm" title="「8月21日」最高速度22.7M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「8月21日」最高速度22.7M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25720.htm" title="养狗对家庭风水好吗（狗看到阴气重的人的后果）">养狗对家庭风水好吗（狗看到阴气重的人的后果）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-ssr-subscribe.htm" title="「12月9日」最高速度18.2M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「12月9日」最高速度18.2M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-25-free-high-speed-nodes.htm" title="「8月25日」最高速度19.1M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「8月25日」最高速度19.1M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27581.htm" title="美联教育电话（美联培训学校）">美联教育电话（美联培训学校）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

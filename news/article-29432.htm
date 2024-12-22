@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-29432.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>echarts根据数据动态生成不同条数的折线图</title>
+        <meta name="description" content="一、功能需求背景 1、后台可自定义折线图的折线名称、数据、数量（几条） 2、满足不同折线图之间随意切换 3、折线图可鼠标拖动缩放和滚动条收缩查看 4、同一页面涉及多个echarts 二、功能涉及ech" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>echarts根据数据动态生成不同条数的折线图</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3><a id="_0" rel="nofollow"></a>一、功能需求背景</h3> <p>1、后台可自定义折线图的折线名称、数据、数量（几条）<br /> 2、满足不同折线图之间随意切换<br /> 3、折线图可鼠标拖动缩放和滚动条收缩查看<br /> 4、同一页面涉及多个echarts</p> <h3><a id="echarts_5" rel="nofollow"></a>二、功能涉及echarts相关文档知识点</h3> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://echarts.apache.org/handbook/zh/how-to/data/dynamic-data"  rel="nofollow">1.异步数据的加载</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://echarts.apache.org/zh/option.html#dataZoom"  rel="nofollow">2.区域缩放组件的使用</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://echarts.apache.org/zh/api.html#echartsInstance.setOption"  rel="nofollow">3.数据更新处理</a></p> <h3><a id="_10" rel="nofollow"></a>三、效果图</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/711992c425ab30cf49863e113a864a3b.jpg" alt="echarts根据数据动态生成不同条数的折线图"></p> <h3><a id="_12" rel="nofollow"></a>四、代码</h3> <p>1、初始化调用</p> <pre><code class="prism language-javascript"><span class="token comment">// 后端返回数据处理后直接调用封装过的函数</span><span class="token function">echarts_1</span><span class="token punctuation">(</span>database1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">echarts_2</span><span class="token punctuation">(</span>database2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <p>2、简单封装单个echarts 初始化</p> <pre><code class="prism language-javascript"><span class="token comment">// 定义线条颜色</span><span class="token keyword">const</span> colors<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'#91cc75'</span><span class="token punctuation">,</span><span class="token string">'#5470c6'</span><span class="token punctuation">,</span><span class="token string">'#ee6666'</span><span class="token punctuation">,</span><span class="token string">'#7a22ef'</span><span class="token punctuation">,</span><span class="token string">'#3bbcd9'</span><span class="token punctuation">]</span><span class="token comment">// 折线图1</span><span class="token keyword">function</span><span class="token function">echarts_1</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span><span class="token punctuation">[</span>data1<span class="token punctuation">,</span>data2<span class="token punctuation">,</span>data3<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>data<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// 定义三组折线数据</span><span class="token keyword">var</span> dom<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"echart1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">var</span> myChart1<span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>dom<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">var</span> option<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>                     dataZoom<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token comment">// 缩放和进度组件</span><span class="token punctuation">{<!-- --></span>                             type<span class="token punctuation">:</span><span class="token string">'slider'</span><span class="token punctuation">,</span>                             show<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>                             xAxisIndex<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>                             start<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span>                             end<span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">,</span>                             filterMode<span class="token punctuation">:</span><span class="token string">'filter'</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span>                             type<span class="token punctuation">:</span><span class="token string">'inside'</span><span class="token punctuation">,</span>                             start<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span>                             end<span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">,</span>                     tooltip<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                         trigger<span class="token punctuation">:</span><span class="token string">'axis'</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token punctuation">,</span>                     grid<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                         left<span class="token punctuation">:</span><span class="token string">'5%'</span><span class="token punctuation">,</span>                         right<span class="token punctuation">:</span><span class="token string">'5%'</span><span class="token punctuation">,</span>                         bottom<span class="token punctuation">:</span><span class="token string">'15%'</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token punctuation">,</span>                     xAxis<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                         type<span class="token punctuation">:</span><span class="token string">'category'</span><span class="token punctuation">,</span>                         boundaryGap<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>                         data<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>                     yAxis<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                         type<span class="token punctuation">:</span><span class="token string">'value'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>                     series<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">if</span><span class="token punctuation">(</span>option<span class="token operator">&amp;&amp;</span><span class="token keyword">typeof</span> option<span class="token operator">===</span><span class="token string">'object'</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                  myChart1<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token function">showChart</span><span class="token punctuation">(</span>data1<span class="token punctuation">,</span>myChart1<span class="token punctuation">,</span>option<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 初始渲染</span><span class="token comment">// 折线图切换渲染</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.database1 .tags li'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> index<span class="token operator">=</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">'check'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">siblings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">'check'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">let</span> targetdata<span class="token operator">=</span><span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token operator">+</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">showChart</span><span class="token punctuation">(</span>targetdata<span class="token punctuation">,</span>myChart1<span class="token punctuation">,</span>option<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> <p>2.根据后端数据封装series</p> <pre><code class="prism language-javascript"><span class="token comment">/*              * 设置折线样式及名称             * set_series              * @param {Object} data 折线数据             * @return {arr} 返回配置项             */</span><span class="token keyword">function</span><span class="token function">set_series</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> series<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">var</span> series_data<span class="token operator">=</span> data<span class="token punctuation">.</span>series<span class="token punctuation">;</span>                 series_data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span>index<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> item<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>                         name<span class="token punctuation">:</span>e<span class="token punctuation">.</span>name<span class="token punctuation">,</span>                         data<span class="token punctuation">:</span>e<span class="token punctuation">.</span>data<span class="token punctuation">,</span>                         type<span class="token punctuation">:</span><span class="token string">'line'</span><span class="token punctuation">,</span>                         itemStyle<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                               normal<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                                   color<span class="token punctuation">:</span>colors<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token comment">//圈圈的颜色</span>                                 lineStyle<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                                       color<span class="token punctuation">:</span>colors<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token comment">//线的颜色</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">}</span>                     series<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">return</span> series<span class="token punctuation">}</span></code></pre> <p>3.数据渲染</p> <pre><code class="prism language-javascript"><span class="token comment">/*              * 折线数据渲染             * @showChart()             * @param {Object} data 折线数据             * @param {Object} myChart echars实例对象             * @param {Object} option  echarts 配置项             */</span><span class="token keyword">function</span><span class="token function">showChart</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span>myChart<span class="token punctuation">,</span>option<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> new_legend<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// 获取折线类别数量</span><span class="token keyword">if</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> new_series<span class="token operator">=</span><span class="token function">set_series</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>                      data<span class="token punctuation">.</span>series<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>e<span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>                         new_legend<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span>                      myChart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token comment">// 清除上次数据</span>                     myChart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>                         xAxis<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                             data<span class="token punctuation">:</span> data<span class="token punctuation">.</span>categories<span class="token punctuation">}</span><span class="token punctuation">,</span>                          legend<span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span>                             data<span class="token punctuation">:</span> new_legend<span class="token punctuation">}</span><span class="token punctuation">,</span>                         series<span class="token punctuation">:</span> new_series<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <h3><a id="_147" rel="nofollow"></a>五、数据渲染问题和遇到的坑</h3> <p>折线图切换时，默认会存在option 合并问题<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://echarts.apache.org/zh/api.html#echartsInstance.setOption"  rel="nofollow">见文档</a>，即便按照文档<code>myChart.setOption(option,true);</code>设置后仍存在历史数据遗留问题，例如图表1是3条折线，图表2是2条折线，图1切换到图2会出现3条折线，多出的一条则是图1的第三条线数据。<br /><mark>目前解决办法</mark><br /> 在下一次更新数据前执行一次空的数据更新<br /><code>myChart.setOption(option,true)</code><br /> 执行后再有数据的option更新<code>myChart.setOption(option)</code><br /> 开发记录，仅做参考。若有更为正确的方法还请指教 (^- -^)</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28974.htm">重庆正规免费领养宠物（重庆免费领养宠物的平台）</a></p>
+                                        <p>下一个：<a href="/news/article-29433.htm">netty系列之:netty中的核心编码器base64</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-26165.htm" title="猫咪打全疫苗大概多少钱（猫咪打全疫苗大概多少钱一次）">猫咪打全疫苗大概多少钱（猫咪打全疫苗大概多少钱一次）</a></li>
+                        <li class="py-2"><a href="/news/article-24793.htm" title="动物接种疫苗的简报怎么写好一点（动物接种疫苗的简报怎么写好一点呢）">动物接种疫苗的简报怎么写好一点（动物接种疫苗的简报怎么写好一点呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-node-share-links.htm" title="「11月19日」最高速度18.4M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月19日」最高速度18.4M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe.htm" title="「11月26日」最高速度18.7M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「11月26日」最高速度18.7M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-9-clash-v2ray-ss-ssr.htm" title="「8月9日」最高速度19.5M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「8月9日」最高速度19.5M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28508.htm" title="小动物疫苗注射证明是疫苗本吗 动物疫苗注射证明怎么开">小动物疫苗注射证明是疫苗本吗 动物疫苗注射证明怎么开</a></li>
+                        <li class="py-2"><a href="/news/article-28973.htm" title="动物打疫苗需要什么资质（动物打疫苗需要什么资质和证书）">动物打疫苗需要什么资质（动物打疫苗需要什么资质和证书）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-20-free-shadowrocket-node.htm" title="「9月20日」最高速度18.7M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「9月20日」最高速度18.7M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-shadowrocket-node.htm" title="「11月10日」最高速度20.4M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「11月10日」最高速度20.4M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-node-share-links.htm" title="「12月1日」最高速度20.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「12月1日」最高速度20.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
