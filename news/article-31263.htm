@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-31263.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>在边缘计算场景中使用Dapr</title>
+        <meta name="description" content="Dapr 是分布式应用程序可移植、事件驱动的运行时， 这里有几个关键字，我们拆开来看一下：  分布式： 代表共享或是分散，在云原生应用上体现为微服务，在边缘计算场景中代表分散的模块，可以做积木式拼接。" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>在边缘计算场景中使用Dapr</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p><a href="https://img2022.cnblogs.com/blog/510/202204/510-20220414090701731-1526516670.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img fetchpriority="high" decoding="async" width="873" height="424" title="image" style="display: inline; background-image: none" alt="image" src="http://img.555519.xyz/uploads3/20220510/cde42b02218d1e0571d1517d7ed0a334.jpg"></a></p> <p>Dapr 是分布式应用程序可移植、事件驱动的运行时， 这里有几个关键字，我们拆开来看一下：</p> <ul> <li>分布式： 代表共享或是分散，在云原生应用上体现为微服务，在边缘计算场景中代表分散的模块，可以做积木式拼接。</li> <li>应用： Dapr 工作在应用层，而不是在网络层，帮助我们构建分布式的应用。</li> <li>可移植的平台：可以将不同的系统集成到您的应用程序中而无需硬编码， 特别是在边缘计算场景中区别于社区中出现的几个号称多运行时架构的项目，比如腾讯的Femas 。</li> <li>运行时：可以在所有的设备上运行Dapr，无论你使用什么样的平台，不管你是用强大计算能力的X86还是低功耗的ARM 平台。</li> </ul> <p>Dapr 被设计成既可以在云上工作也可以在边缘上工作。但是到目前为止，它的应用重点仍是聚焦在开启云原生应用上。下面我们来展示将Dapr 为边缘计算场景带来价值的不同方式，内容部分来自《Dapr 学习手册》：当当网链接：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://dmll.cn/RXv2"  rel="nofollow">http://dmll.cn/RXv2</a>，推荐大家买来读一遍，Dapr的精彩介绍来自于Dapr 的原创。</p> <p>Dapr 拥有作为函数计算运行时必要的所有基础的功能，它支持可以用于激活函数代码的触发器，同时它也支持函数代码用来把数据发送给另一个系统的绑定。Dapr 运行时以单进程的方式运行。虽然有其他Dapr辅助服务，例如Dapr Actor的定位（Placement)服务，Dapr 运行时本身足以支持常见的函数执行。这使得在边缘部署的运行时打包和分发变得足够简单。把我们的函数代码实现成HTTP或者gRPC服务器。可以预期的是，未来的Dapr 将会扩展成动态加载函数代码。</p> <p><a href="https://img2022.cnblogs.com/blog/510/202204/510-20220414090703628-1417029407.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img decoding="async" width="860" height="478" title="image" style="display: inline; background-image: none" alt="image" src="http://img.555519.xyz/uploads3/20220510/e73f300f290cf688c1b91e1f57e48db8.jpg"></a></p> <p><a href="https://img2022.cnblogs.com/blog/510/202204/510-20220414090704719-346183805.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img decoding="async" width="865" height="485" title="image" style="display: inline; background-image: none" alt="image" src="http://img.555519.xyz/uploads3/20220510/7e1d477fa4cf2f137ebbf38f9c3e89d1.jpg"></a></p> <p></p> <p><a href="https://img2022.cnblogs.com/blog/510/202204/510-20220414090705521-104800206.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img loading="lazy" decoding="async" width="867" height="482" title="image" style="display: inline; background-image: none" alt="image" src="http://img.555519.xyz/uploads3/20220510/3c636fd8d4a96f753dac95ed62ed11a2.jpg"></a></p> <p>在低功耗设备上运行Dapr 边车可能有点昂贵，Dapr 适合的解决方案场景是在现场网关上运行,然后让设备通过IP 地址和 Dapr 边车通信。我最近刚做了一个例子是通过Dapr 和 边缘 MQTT 服务器的PubSub ，代码例子参看：<a title="https://github.com/geffzhang/dapr-nanomq" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/geffzhang/dapr-nanomq"  rel="nofollow">https://github.com/geffzhang/dapr-nanomq</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-31262.htm">SpringCloud系列之五&#8212;集中配置组件Config+消息总线Bus</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-25719.htm" title="猫粮品牌推荐（猫粮品牌推荐大全）">猫粮品牌推荐（猫粮品牌推荐大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-6-free-ssr-subscribe.htm" title="「9月6日」最高速度19.1M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「9月6日」最高速度19.1M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28043.htm" title="Vue 列表渲染中的key">Vue 列表渲染中的key</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-node-share.htm" title="「11月24日」最高速度19.9M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月24日」最高速度19.9M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-21-free-subscribe-node.htm" title="「8月21日」最高速度22.7M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「8月21日」最高速度22.7M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-node-share-links.htm" title="「12月1日」最高速度20.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「12月1日」最高速度20.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-1-free-node-subscribe-links.htm" title="「9月1日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「9月1日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-free-subscribe-node.htm" title="「12月15日」最高速度18.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月15日」最高速度18.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-node-share.htm" title="「12月16日」最高速度20.5M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「12月16日」最高速度20.5M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22025.htm" title="动物打完疫苗需要注意什么事项（动物打了疫苗）">动物打完疫苗需要注意什么事项（动物打了疫苗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
