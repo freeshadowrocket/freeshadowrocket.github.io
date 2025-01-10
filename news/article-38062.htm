@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-38062.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Java基础|Java8接口新特性</title>
+        <meta name="description" content="文章目录  1 接口特性 2 Java8接口-新特性 3 具体用例     接口不是类，不能使用 new 实例化一个接口； 不能构造接口的对象，但可声明接口的变量； 接口变量必须引用实现了接口的类对象" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>Java基础|Java8接口新特性</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#1__1" rel="nofollow">1 接口特性</a></li> <li><a href="#2_Java8_12" rel="nofollow">2 Java8接口-新特性</a></li> <li><a href="#3__24" rel="nofollow">3 具体用例</a></li> </ul> </div> </h1> <ol> <li>接口不是类，不能使用 new 实例化一个接口；</li> <li>不能构造接口的对象，但可声明接口的变量；</li> <li>接口变量必须引用实现了接口的类对象；</li> <li>可以使用 instanceof 检查一个对象是否实现了某个特定的接口；</li> <li>可以建立类的继承关系一样，接口可以继承接口进行扩展；</li> <li>接口中不能包含实例域或静态方法，但可包含常量；</li> <li>接口中声明的方法自动地设置为 public；</li> <li>接口中的域（即常量）自动地设置为 public static final;</li> </ol> </h1> <ol> <li>静态方法。<br /> JavaSE8 允许在接口中增加<strong>静态方法</strong>；</li> <li>默认方法。<br /> 可以为接口方法提供一个默认实现，必须使用 default 修饰符标记这个方法；</li> <li>解决默认方法冲突问题：<br /> 如果接口中将一个方法定义为默认方法，然后在超类或另一个接口中定义了同样的方法。就要解决冲突，规则如下：<br /> ① 超类优先。如果超类提供了一个具体方法，同名且有相同参数类型的默认方法会被忽略。<br /> ②接口冲突。如果一个超接口提供了一个默认方法，另一个接口提供了一个同名而且参数类型相同的方法，必须覆盖这个方法来解决冲突。<br /> ③类优先原则。如果一个类扩展了一个超类，同时实现了一个接口，并且从超类和接口继承了相同的方法。此种情况使用类优先原则，接口的默认方法会被忽略。</li> </ol> </h1> <p>接口PersonInfo</p> <pre><code class="prism language-java"><span class="token comment">/**  * @version $Id: PersonInfo.java, v 0.1 2017年6月9日 下午5:19:14  */</span> <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">PersonInfo</span> <span class="token punctuation">{<!-- --></span>     <span class="token comment">//方法都自动设置为public</span>     <span class="token keyword">void</span> <span class="token function">printAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">//常量自动设置为 public static final</span>     <span class="token class-name">String</span> DEFAULT_NAME <span class="token operator">=</span> <span class="token string">"TIANCI"</span><span class="token punctuation">;</span>      <span class="token keyword">int</span>    DEFAULT_AGE  <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">;</span>      <span class="token class-name">String</span> DEFAULT_SEX  <span class="token operator">=</span> <span class="token string">"男"</span><span class="token punctuation">;</span>      <span class="token comment">//javaSE8可以有静态方法</span>     <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">printSex</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>DEFAULT_SEX<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span><span class="token punctuation">;</span>      <span class="token comment">//javaSE8 可以为接口方法提供默认实现，default进行标记</span>     <span class="token keyword">default</span> <span class="token keyword">void</span> <span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>DEFAULT_NAME<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <hr/> <p>接口PersonHobby</p> <pre><code class="prism language-java"><span class="token comment">/**  * @version $Id: PersonHobby.java, v 0.1 2017年6月9日 下午5:41:59  */</span> <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">PersonHobby</span> <span class="token punctuation">{<!-- --></span>     <span class="token class-name">String</span> DEFAULT_HOBBY <span class="token operator">=</span> <span class="token string">"运动"</span><span class="token punctuation">;</span>      <span class="token keyword">default</span> <span class="token keyword">void</span> <span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hobby name is:"</span> <span class="token operator">+</span> DEFAULT_HOBBY<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span>  </code></pre> <hr/> <p>类Person</p> <pre><code class="prism language-java"><span class="token comment">/**  * Person类实现了两个接口，两个接口中都有默认的实现方法printName()  * 造成冲突，解决冲突的办法就是在类中覆盖这个方法  * 方法具体实现可以是重写，也可以选择调用具体接口的默认实现方法  * @version $Id: Person.java, v 0.1 2017年6月9日 下午5:19:00  */</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token keyword">implements</span> <span class="token class-name">PersonInfo</span><span class="token punctuation">,</span> <span class="token class-name">PersonHobby</span> <span class="token punctuation">{<!-- --></span>      <span class="token keyword">private</span> <span class="token class-name">String</span> age<span class="token punctuation">;</span>     <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>      <span class="token punctuation">{<!-- --></span>         age <span class="token operator">=</span> <span class="token string">"age init from Person."</span><span class="token punctuation">;</span>         name <span class="token operator">=</span> <span class="token string">"name init form Person."</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>      <span class="token annotation punctuation">@Override</span>     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>      <span class="token comment">//两个接口都有该方法默认实现，进行覆写来解决冲突</span>     <span class="token comment">//方法具体实现可以是重写，也可以选择调用具体接口的默认实现方法</span>     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token comment">/*调用具体的接口默认实现         PersonInfo.super.printName();*/</span>         <span class="token comment">/* 调用具体的接口默认实现         PersonHobby.super.printName();*/</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <hr/> <p>测试代码</p> <pre><code class="prism language-java"><span class="token comment">/**  * @version $Id: Test.java, v 0.1 2017年6月9日 下午5:45:44  */</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">Person</span> person1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//可以使用接口声明变量,变量必须引用实现了接口的类对象</span>         <span class="token comment">//但对象的能力只拥有声明的接口类型中的能力</span>         <span class="token comment">//如person3和person4没有printAge()的能力</span>         <span class="token class-name">PersonInfo</span> person2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">PersonHobby</span> person3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">PersonHobby</span> person4 <span class="token operator">=</span> person1<span class="token punctuation">;</span>          person1<span class="token punctuation">.</span><span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person1<span class="token punctuation">.</span><span class="token function">printAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person2<span class="token punctuation">.</span><span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person2<span class="token punctuation">.</span><span class="token function">printAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person3<span class="token punctuation">.</span><span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         person4<span class="token punctuation">.</span><span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">/*              * 对象的能力只拥有声明的接口类型中的能力          * person3和person4没有printAge()能力，下面方法不可用          * person3.printAge();          * person4.printAge();         */</span>         <span class="token comment">//使用接口调用接口中声明的静态方法</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----接口中静态方法---"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">PersonInfo</span><span class="token punctuation">.</span><span class="token function">printSex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----访问接口中常量---"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">PersonInfo</span><span class="token punctuation">.</span>DEFAULT_AGE<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">PersonInfo</span><span class="token punctuation">.</span>DEFAULT_NAME<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">PersonInfo</span><span class="token punctuation">.</span>DEFAULT_SEX<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">PersonHobby</span><span class="token punctuation">.</span>DEFAULT_HOBBY<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>测试结果：</p> <pre><code class="prism language-java">name init form <span class="token class-name">Person</span><span class="token punctuation">.</span> age init from <span class="token class-name">Person</span><span class="token punctuation">.</span> <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> name init form <span class="token class-name">Person</span><span class="token punctuation">.</span> age init from <span class="token class-name">Person</span><span class="token punctuation">.</span> <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> name init form <span class="token class-name">Person</span><span class="token punctuation">.</span> name init form <span class="token class-name">Person</span><span class="token punctuation">.</span> <span class="token operator">--</span><span class="token operator">--</span>接口中静态方法<span class="token operator">--</span><span class="token operator">-</span> 男 <span class="token operator">--</span><span class="token operator">--</span>访问接口中常量<span class="token operator">--</span><span class="token operator">-</span> <span class="token number">18</span> TIANCI 男 运动 </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-37567.htm">华中农业大学动物医院价目表（华中农业大学动物医院收费）</a></p>
+                                        <p>下一个：<a href="/news/article-38065.htm">兽用疫苗经营许可（兽用疫苗经营许可证需要什么条件）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-30873.htm" title="学美容的正规学校学费（学美容的学费大概是多少钱呀）">学美容的正规学校学费（学美容的学费大概是多少钱呀）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-free-high-speed-nodes.htm" title="「1月10日」最高速度21.3M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费订阅地址分享">「1月10日」最高速度21.3M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-19277.htm" title="动物医院申请条件是什么意思呀怎么写的（动物医院需要几个兽医资格证）">动物医院申请条件是什么意思呀怎么写的（动物医院需要几个兽医资格证）</a></li>
+                        <li class="py-2"><a href="/news/article-34687.htm" title="动物疫苗价格查询官网入口下载软件（动物疫苗的使用方法及注意事项）">动物疫苗价格查询官网入口下载软件（动物疫苗的使用方法及注意事项）</a></li>
+                        <li class="py-2"><a href="/news/article-35573.htm" title="免费领养动物的app（免费领养宠物的平台）">免费领养动物的app（免费领养宠物的平台）</a></li>
+                        <li class="py-2"><a href="/news/article-21565.htm" title="react事件类型">react事件类型</a></li>
+                        <li class="py-2"><a href="/news/article-22025.htm" title="动物打完疫苗需要注意什么事项（动物打了疫苗）">动物打完疫苗需要注意什么事项（动物打了疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-ssr-node.htm" title="「11月12日」最高速度19.5M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「11月12日」最高速度19.5M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-33248.htm" title="Linux中信号量源码的详细解析">Linux中信号量源码的详细解析</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-node-share-links.htm" title="「12月1日」最高速度20.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「12月1日」最高速度20.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
