@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-40055.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>es6操作数组方法</title>
+        <meta name="description" content="1.forEach( item, index, array ): 遍历数组，对数组的每个元素执行一次提供的函数，改变当前数组，没有返回值  item: 当前项的值 index: 当前项的索引 arra" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="__ADDON__/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="__ADDON__/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>es6操作数组方法</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>1.<code>forEach( item, index, array )</code>: 遍历数组，对数组的每个元素执行一次提供的函数，改变当前数组，没有返回值</p> <ul> <li>item: 当前项的值</li> <li>index: 当前项的索引</li> <li>array: 操作的数组</li> </ul> <pre><code class="prism language-javascript"><span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token keyword">let</span> arr2 <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> item<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr <span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>    <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'arr: '</span><span class="token punctuation">,</span> arr <span class="token punctuation">)</span><span class="token punctuation">;</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'item: '</span><span class="token punctuation">,</span> item<span class="token punctuation">,</span> <span class="token string">' | index: '</span><span class="token punctuation">,</span> index <span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'arr2: '</span><span class="token punctuation">,</span> arr2 <span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230109/e9f30479cf66b3f2cd048c2e4b1f7ee4.jpg" alt="es6操作数组方法"><br /> 2.<code>map( item, index, array )</code>: 返回一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p> <ul> <li>item: 当前项的值</li> <li>index: 当前项的索引</li> <li>array: 操作的数组</li> </ul> <pre><code class="prism language-javascript"><span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token keyword">let</span> arr2 <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> item<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr <span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>      <span class="token keyword">return</span> <span class="token string">'after map '</span> <span class="token operator">+</span> item <span class="token punctuation">}</span> <span class="token punctuation">)</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'arr2: '</span><span class="token punctuation">,</span> arr2 <span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230109/5a6648793bda4cbc7113a5e71880c5e2.jpg" alt="es6操作数组方法"><br /> 3.<code>filter( )</code>: 返回一个新数组, 其包含通过所提供函数实现的测试的所有元素。也就是说一个过滤器的作用，没有通过函数测试的元素将被过滤掉</p> <ul> <li>item: 当前项的值</li> <li>index: 当前项的索引</li> <li>array: 操作的数组</li> </ul> <pre><code class="prism language-javascript"><span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">'javaScript'</span><span class="token punctuation">,</span> <span class="token string">'webpack'</span><span class="token punctuation">,</span> <span class="token string">'typeScript'</span><span class="token punctuation">,</span> <span class="token string">'nodejs'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token keyword">let</span> arr2 <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> item<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr <span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>   <span class="token comment">// 返回字符长度小于10的元素</span>   <span class="token keyword">return</span> item<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'arr2: '</span><span class="token punctuation">,</span> arr2 <span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230109/fb1e771af17703b72fd83702410c9902.jpg" alt="es6操作数组方法"><br /> 4.<code>every( item, index, array )</code>: 它返回一个<code>Boolean</code>值，测试数组内的所有元素是否都能通过指定函数的测试，所有元素都通过才会返回<code>true</code>，否则返回<code>false</code></p> <ul> <li>item: 当前项的值</li> <li>index: 当前项的索引</li> <li>array: 操作的数组</li> </ul> <pre><code class="prism language-javascript"><span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token keyword">let</span> arr2 <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> item<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr <span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>   <span class="token keyword">return</span> item <span class="token operator">&lt;</span> <span class="token number">5</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'arr2: '</span><span class="token punctuation">,</span> arr2 <span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230109/0108d5bdcc23120fbaa2b373edb99966.jpg" alt="es6操作数组方法"><br /> 5.<code>some( item, index, array )</code>: 和<code>every</code>相反，只要数组中的元素有一个通过指定函数的测试，那么就返回<code>true</code>，否则返回<code>false</code></p> <ul> <li>item: 当前项的值</li> <li>index: 当前项的索引</li> <li>array: 操作的数组</li> </ul> <pre><code class="prism language-javascript"><span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token keyword">let</span> arr2 <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> item<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr <span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>    <span class="token keyword">return</span> item <span class="token operator">&lt;</span> <span class="token number">2</span>  <span class="token punctuation">}</span> <span class="token punctuation">)</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'arr2: '</span><span class="token punctuation">,</span> arr2 <span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230109/5a0181d0d914a466d7c2c0a93e31d344.jpg" alt="es6操作数组方法"><br /> 6.<code>reduce( accumulator, item, index, array )</code>: 对数组中的每个元素执行一个提供的reducer函数，将其结果汇总为单个返回值。</p> <ul> <li>accumulator: 累加器</li> <li>item: 当前项的值</li> <li>index: 当前项的索引</li> <li>array: 操作的数组</li> </ul> <pre><code class="prism language-javascript"><span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token keyword">let</span> arr2 <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span> <span class="token punctuation">(</span> accumulator<span class="token punctuation">,</span> item<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr <span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'每次累加器的值: '</span><span class="token punctuation">,</span> accumulator <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> accumulator <span class="token operator">+</span> item<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">'arr2: '</span><span class="token punctuation">,</span> arr2 <span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230109/1c1e404739a6c448e643f6e11f6567f2.jpg" alt="es6操作数组方法"><br /> 7.<code>reduceRight( accumulator, item, index, array )</code>: 功能与<code>reduce</code>相同，不同的是: <mark>从数组最后一个元素向前遍历计算</mark></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-39538.htm">美联众合动物医院总部在哪 美联众合动物医院总院在哪</a></p>
+                                        <p>下一个：<a href="/news/article-40057.htm">Linux 下清空或删除大文件/大量文件的几种方法</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-39058.htm" title="Autograd：Pytorch 中的自动微分机制讲解">Autograd：Pytorch 中的自动微分机制讲解</a></li>
+                        <li class="py-2"><a href="/news/article-24793.htm" title="动物接种疫苗的简报怎么写好一点（动物接种疫苗的简报怎么写好一点呢）">动物接种疫苗的简报怎么写好一点（动物接种疫苗的简报怎么写好一点呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share.htm" title="「11月29日」最高速度18.4M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「11月29日」最高速度18.4M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-free-ssr-node.htm" title="「1月11日」最高速度22.4M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费订阅地址分享">「1月11日」最高速度22.4M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-20649.htm" title="Linux网络服务之NFS共享服务">Linux网络服务之NFS共享服务</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-ssr-node.htm" title="「1月7日」最高速度21.1M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费订阅地址分享">「1月7日」最高速度21.1M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-27111.htm" title="兽用疫苗可以m网上买吗（兽用疫苗审批流程）">兽用疫苗可以m网上买吗（兽用疫苗审批流程）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-10-free-node-subscribe.htm" title="「10月10日」最高速度18.1M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「10月10日」最高速度18.1M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-node-share-links.htm" title="「11月1日」最高速度21.8M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「11月1日」最高速度21.8M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-ssr-node.htm" title="「12月28日」最高速度21.8M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费订阅地址分享">「12月28日」最高速度21.8M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费订阅地址分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
