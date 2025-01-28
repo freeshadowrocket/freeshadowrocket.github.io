@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-47001.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SpringBoot整合ActiveMQ（入门）</title>
+        <meta name="description" content="这是一篇博客原文。 &nbsp;消息队列中间件是分布式系统中重要的组件，主要解决应用耦合，异步消息，流量削锋等问题。实现高性能，高可用，可伸缩和最终一致性架构。是大型分布式系统不可缺少的中间件。消息形" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-47001.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="SpringBoot整合ActiveMQ（入门）" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/2332be8f1c4350905a2df1d4d6934f5d.webp" />
+        <meta property="og:release_date" content="2025-01-27T08:18:49" />
+    <meta property="og:updated_time" content="2025-01-27T08:18:49" />
+        <meta property="og:description" content="这是一篇博客原文。 &nbsp;消息队列中间件是分布式系统中重要的组件，主要解决应用耦合，异步消息，流量削锋等问题。实现高性能，高可用，可伸缩和最终一致性架构。是大型分布式系统不可缺少的中间件。消息形" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot整合ActiveMQ（入门）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>SpringBoot整合ActiveMQ（入门）</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>这是一篇博客原文。</p> <p>&nbsp;消息队列中间件是分布式系统中重要的组件，<span style="color:#f33b45;"><strong>主要解决应用耦合，异步消息，流量削锋等问题。实现高性能，高可用，可伸缩和最终一致性架构</strong></span>。是大型分布式系统不可缺少的中间件。消息形式支持<span style="color:#f33b45;"><strong>点对点和订阅-发布</strong></span>。</p> <h2><strong>ActiveMQ是什么？</strong></h2> <blockquote> <ol> <li><strong>ActiveMQ是消息队列技术，为解决高并发问题而生</strong></li> <li><strong>ActiveMQ生产者消费者模型（生产者和消费者可以跨平台、跨系统）</strong></li> <li><strong>ActiveMQ支持如下两种消息传输方式</strong></li> </ol> <ul> <li><strong>点对点模式，生产者生产了一个消息，只能由一个消费者进行消费</strong></li> <li><strong>发布/订阅模式，生产者生产了一个消息，可以由多个消费者进行</strong></li> </ul> </blockquote> <h2><strong>SpringBoot整合ActiveMQ</strong></h2> <h3><strong>1. ActiveMQ下载启动</strong></h3> <blockquote> <p><strong>可直接进入官网下载完成。<a href="" rel="nofollow"> http://activemq.apache.org/download-archives.html</a></strong></p> </blockquote> <p>&nbsp;&nbsp;如果能成功访问<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8161/admin"  rel="nofollow">http://localhost:8161/admin</a>（用户名和密码默认为admin），则启动成功。</p> <h3><strong>2.&nbsp; 创建两个springboot项目，分别作为消息提供者（provider）和消费者（consumer），添加依赖</strong></h3> <pre><code class="language-XML">&lt;dependency&gt;     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;     &lt;artifactId&gt;spring-boot-starter-activemq&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!--消息队列连接池--&gt; &lt;dependency&gt;     &lt;groupId&gt;org.apache.activemq&lt;/groupId&gt;     &lt;artifactId&gt;activemq-pool&lt;/artifactId&gt;     &lt;version&gt;5.15.0&lt;/version&gt; &lt;/dependency&gt;</code></pre> <h3><strong>3.&nbsp; 在两个项目中的application.properires配置消息队列，并在启动类添加@EnableJms开启消息队列。</strong></h3> <h3><strong><span style="color:#3399ea;">application.properties</span></strong></h3> <pre><code class="language-XML"># failover:(tcp://localhost:61616,tcp://localhost:61617) # tcp://localhost:61616 spring.activemq.broker-url=tcp://localhost:61616 #true 表示使用内置的MQ，false则连接服务器 spring.activemq.in-memory=false #true表示使用连接池；false时，每发送一条数据创建一个连接 spring.activemq.pool.enabled=true #连接池最大连接数 spring.activemq.pool.max-connections=10 #空闲的连接过期时间，默认为30秒 spring.activemq.pool.idle-timeout=30000 #强制的连接过期时间，与idleTimeout的区别在于：idleTimeout是在连接空闲一段时间失效，而expiryTimeout不管当前连接的情况，只要达到指定时间就失效。默认为0，never spring.activemq.pool.expiry-timeout=0</code></pre> <p><span style="color:#f33b45;">这里采用的是key---value键值对方式配置。&nbsp; 也可以使用yaml格式配置（此格式为官方推荐格式）</span></p> <p><strong>启动类(provider)，consumer同样</strong></p> <pre><code class="language-java">@SpringBootApplication @EnableJms //启动消息队列 public class ProviderApplication { 	public static void main(String[] args) { 		SpringApplication.run(ProviderApplication.class, args); 	} }</code></pre> <h3><strong>4.&nbsp; prover项目结构图</strong></h3> <p><img fetchpriority="high" decoding="async" alt="" height="552" src="http://img.555519.xyz/uploads/20221120/fb5781e2d2d32ccce3ea2032d93f1f48.jpg"></p> <p><strong>BeanConfig定义消息队列</strong></p> <pre><code class="language-java">import javax.jms.Queue; import org.apache.activemq.command.ActiveMQQueue; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;   /*  * @author ww  * @date 2021/3/23  11:55  */ @Configuration public class BeanConfig {       //定义存放消息的队列     @Bean     public Queue queue() {         return new ActiveMQQueue("ActiveMQQueue");     } }</code></pre> <p><strong>ProviderController</strong></p> <pre><code class="language-java">import javax.jms.Queue; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.jms.core.JmsMessagingTemplate; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RestController;   /*  * @author ww  * @date   *  */ @RestController public class ProviderController {       //注入存放消息的队列，用于下列方法一     @Autowired     private Queue queue;       //注入springboot封装的工具类     @Autowired     private JmsMessagingTemplate jmsMessagingTemplate;       @RequestMapping("send")     public void send(String name) {         //方法一：添加消息到消息队列         jmsMessagingTemplate.convertAndSend(queue, name);         //方法二：这种方式不需要手动创建queue，系统会自行创建名为test的队列         //jmsMessagingTemplate.convertAndSend("test", name);     } }</code></pre> <h3><strong>5.&nbsp; 启动provider，向消息队列添加数据，本次添加5条数据</strong></h3> <blockquote> <p><span style="color:#3399ea;"><strong>这里使用postman工具模拟请求发送。</strong></span></p> </blockquote> <p><img decoding="async" alt="" height="177" src="http://img.555519.xyz/uploads/20221120/0de0ab021f8ce06ec42488fc02fc18f8.jpg"></p> <p><strong>查看<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8161/admin/queues.jsp"  rel="nofollow">http://localhost:8161/admin/queues.jsp</a>&nbsp;如下</strong></p> <p><img decoding="async" alt="" height="534" src="http://img.555519.xyz/uploads/20221120/a322c465e46c336fb1819783cc169d2d.jpg"></p> <blockquote> <ul> <li><strong>Number Of Pending Messages：消息队列中待处理的消息</strong></li> <li><strong>Number Of Consumers：消费者的数量</strong></li> <li><strong>Messages Enqueued：累计进入过消息队列的总量</strong></li> <li><strong>Messages Dequeued：累计消费过的消息总量</strong></li> </ul> </blockquote> <h3><strong>&nbsp;6. consumer项目结构图</strong></h3> <p><img loading="lazy" decoding="async" alt="" height="427" src="http://img.555519.xyz/uploads/20221120/a0e70a6c001b7bbc831700e56e164ea8.jpg"></p> <p><strong>application.properties 和 ConsumerApplication 同 provider类似，如下为不同的ConsumerService：</strong></p> <pre><code class="language-java">import org.springframework.beans.factory.annotation.Autowired; import org.springframework.jms.annotation.JmsListener; import org.springframework.jms.core.JmsMessagingTemplate; import org.springframework.messaging.handler.annotation.SendTo; import org.springframework.stereotype.Component;   /*  * @author ww  * @date 2021/3/23  11:58  *  */ @Component public class ConsumerService {       @Autowired     private JmsMessagingTemplate jmsMessagingTemplate;       // 使用JmsListener配置消费者监听的队列，其中name是接收到的消息     @JmsListener(destination = "ActiveMQQueue")     // SendTo 会将此方法返回的数据, 写入到 OutQueue 中去.     @SendTo("SQueue")     public String handleMessage(String name) {         System.out.println("成功接受Name" + name);         return "成功接受Name" + name;     } }</code></pre> <h3><strong>&nbsp;7. 启动consumer，控制台输出如下</strong></h3> <p><img loading="lazy" decoding="async" alt="" height="180" src="http://img.555519.xyz/uploads/20221120/536cc52ab38f9308ab281a5721b93733.jpg"></p> <p>&nbsp;消息接收成功，查看<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8161/admin/queues.jsp"  rel="nofollow">http://localhost:8161/admin/queues.jsp</a>&nbsp;，如下图所示，消息队列中不再有未处理的消息，由于consumer的启动，消费者的数量为1，Messages Dequeued（累计消费过的消息总量）的数值也变成了5；另外消费者接收到5条消息处理后，返回到OutQueue 5条消息，下图可以看出来。</p> <p><img loading="lazy" decoding="async" alt="" height="453" src="http://img.555519.xyz/uploads/20221120/cdba0bad8cbf5b23bd2520927f7c9544.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-46483.htm">狗领养协议有没有法律效应（领养狗协议书范本）</a></p>
+                                        <p>下一个：<a href="/news/article-47002.htm">宠物店一年利润表（宠物店净利润）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-ssr-node.htm" title="「12月28日」最高速度21.8M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费订阅地址分享">「12月28日」最高速度21.8M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-shadowrocket-node.htm" title="「10月26日」最高速度19.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月26日」最高速度19.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28045.htm" title="动物打疫苗后的不良反应有哪些症状表现（动物打疫苗注意事项）">动物打疫苗后的不良反应有哪些症状表现（动物打疫苗注意事项）</a></li>
+                        <li class="py-2"><a href="/news/article-28974.htm" title="重庆正规免费领养宠物（重庆免费领养宠物的平台）">重庆正规免费领养宠物（重庆免费领养宠物的平台）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-node-subscribe-links.htm" title="「11月27日」最高速度21.1M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「11月27日」最高速度21.1M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22480.htm" title="实现mysql主从复制、读写分离">实现mysql主从复制、读写分离</a></li>
+                        <li class="py-2"><a href="/news/article-19735.htm" title="河南省动物疫苗招标公告查询（河南省动物疫苗招标公告查询网）">河南省动物疫苗招标公告查询（河南省动物疫苗招标公告查询网）</a></li>
+                        <li class="py-2"><a href="/news/article-26164.htm" title="国内宠物粮食十大厂家排名（中国宠物粮厂家批发网）">国内宠物粮食十大厂家排名（中国宠物粮厂家批发网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-shadowrocket-node.htm" title="「1月9日」最高速度22.2M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费订阅地址分享">「1月9日」最高速度22.2M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-24793.htm" title="动物接种疫苗的简报怎么写好一点（动物接种疫苗的简报怎么写好一点呢）">动物接种疫苗的简报怎么写好一点（动物接种疫苗的简报怎么写好一点呢）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
