@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-48968.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Kafka 单机（集群）安装部署（自带zookeeper）</title>
+        <meta name="description" content="背景： kafka官网：http://kafka.apache.org/ kafka下载页面：http://kafka.apache.org/downloads kafka配置快速入门：http://" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-48968.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="Kafka 单机（集群）安装部署（自带zookeeper）" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/867688ce77bb640f32e1e42dfabf935a.webp" />
+        <meta property="og:release_date" content="2025-01-31T07:18:49" />
+    <meta property="og:updated_time" content="2025-01-31T07:18:49" />
+        <meta property="og:description" content="背景： kafka官网：http://kafka.apache.org/ kafka下载页面：http://kafka.apache.org/downloads kafka配置快速入门：http://" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Kafka 单机（集群）安装部署（自带zookeeper）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>Kafka 单机（集群）安装部署（自带zookeeper）</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>背景：<br /> kafka官网：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://link.jianshu.com/?t=http%3A%2F%2Fkafka.apache.org%2F"  title="http://kafka.apache.org/" rel="nofollow">http://kafka.apache.org/</a><br /> kafka下载页面：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://link.jianshu.com/?t=http%3A%2F%2Fkafka.apache.org%2Fdownloads"  title="http://kafka.apache.org/downloads" rel="nofollow">http://kafka.apache.org/downloads</a><br /> kafka配置快速入门：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://link.jianshu.com/?t=http%3A%2F%2Fkafka.apache.org%2Fquickstart"  title="http://kafka.apache.org/quickstart" rel="nofollow">http://kafka.apache.org/quickstart</a><br /> 新版本的kafka自带有zookeeper，本篇文章记录使用自带zookeeper搭建kafka集群。</p> <p>消息队列术语：</p> <p>•Kafka将消息以topic为单位进行归纳。<br /> •将向Kafka topic发布消息的程序成为producers.<br /> •将预订topics并消费消息的程序成为consumer.<br /> •Kafka以集群的方式运行，可以由一个或多个服务组成，每个服务叫做一个broker.<br /> producers通过网络将消息发送到Kafka集群，集群向消费者提供消息，如下图所示：</p> <p class="img-center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220823/0f2f20abdf5c57c71cbede2b256e3d89.jpg"></p> <p>客户端和服务端通过TCP协议通信。Kafka提供了Java客户端，并且对多种语言都提供了支持。</p> <p>3.1.0 稳定版本下载地址：</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.apache.org/dyn/closer.cgi?path=/kafka/3.1.0/kafka_2.13-3.1.0.tgz"  title="https://www.apache.org/dyn/closer.cgi?path=/kafka/3.1.0/kafka_2.13-3.1.0.tgz" rel="nofollow">https://www.apache.org/dyn/closer.cgi?path=/kafka/3.1.0/kafka_2.13-3.1.0.tgz</a></p> <p>1、操作命令：</p> <p>cd /usr/local/</p> <p>tar -zxvf kafka_2.11-2.0.0.tgz&nbsp; //解压 tar 包</p> <p>rm -rf LICENSE NOTICE site-docs&nbsp; //删除 LICENSE、NOTICE 、site-docs</p> <p> 2、启动zookeeper</p> <p>cd bin/</p> <p>nohup ./zookeeper-server-start.sh ../config/zookeeper.properties&nbsp;&nbsp;&gt;&gt;/var/tmp/kafka/zk.log 2&gt;&amp;1 &amp;</p> <p>jps&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//查看启动成功</p> <p><img fetchpriority="high" decoding="async" alt="" height="129" src="http://img.555519.xyz/uploads3/20220823/598fab12b456ab3debff5e1cc3eaeaf9.jpg"></p> <p>3、启动Kafka</p> <p>nohup ./kafka-server-start.sh ../config/server.properties &gt;&gt;/var/tmp/kafka/kafka.log 2&gt;&amp;1 &amp;</p> <p><img decoding="async" alt="" height="140" src="http://img.555519.xyz/uploads3/20220823/0da49a0ab34e71974c2522540fe6cf2e.jpg"></p> <p>&nbsp;4、停止Kafka 、zookeeper</p> <p>./kafka-server-stop.sh&nbsp; &nbsp;//先停kafka server</p> <p>./zookeeper-server-stop.sh&nbsp; //再停zookeeper</p> <p>5、Kafka 使用</p> <p>1）创建topic&nbsp; &nbsp;pushu</p> <p>./kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic pushu</p> <p><img decoding="async" alt="" height="204" src="http://img.555519.xyz/uploads3/20220823/3fadd7e0640ecff4bc8dcbab6a7999e4.jpg"></p> <p>2) 查询topic 是否OK</p> <p>./kafka-topics.sh --list --bootstrap-server localhost:9092</p> <p><img loading="lazy" decoding="async" alt="" height="54" src="http://img.555519.xyz/uploads3/20220823/9708d7dd9cc3773347afc8a859ea4dec.jpg"></p> <p>&nbsp;3）生产者</p> <p>&nbsp;./kafka-console-producer.sh --broker-list &nbsp;localhost:9092 &nbsp;--topic pushu</p> <p><img loading="lazy" decoding="async" alt="" height="231" src="http://img.555519.xyz/uploads3/20220823/65b878778a34f316bba2e0af8a2cf3dd.jpg"></p> <p>4）消费者</p> <p>./kafka-console-consumer.sh --bootstrap-server localhost:9092 &nbsp;--topic pushu</p> <p><img loading="lazy" decoding="async" alt="" height="266" src="http://img.555519.xyz/uploads3/20220823/6710c4fd00b5fdec4e03803b4a473643.jpg"></p> <p>&nbsp;单机方式已验证OK，可以大胆的通过Python，Java，等Client方式对接使用。</p> <p>6、集群方式</p> <p>1）其他机器 安装Kafka</p> <p>分别往192.168.10.66、192.168.10.88、192.168.10.99这三台虚拟机上安装kafka</p> <p>2）配置server.properties</p> <p>cd&nbsp;&nbsp;/data/software/kafka_2.13-3.1.0/config</p> <p>配置&nbsp;broker.id 每个机器独立的ID</p> <p><img loading="lazy" decoding="async" alt="" height="567" src="http://img.555519.xyz/uploads3/20220823/9dac185087c3244f970deb81dd676da0.jpg"></p> <p>配置zookeeper集群端口</p> <p><img loading="lazy" decoding="async" alt="" height="260" src="http://img.555519.xyz/uploads3/20220823/1c1d63c6af58e2798b7eef6ec6a84bff.jpg"></p> <p>&nbsp;&nbsp;3）集群配置完成，非常完美！</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-48366.htm">Redis 主从同步原理解析</a></p>
+                                        <p>下一个：<a href="/news/article-48969.htm">猫粮十大品牌有哪些牌子（猫粮10大品牌排行榜）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-30396.htm" title="狗粮加工利润 狗粮加工利润怎么样">狗粮加工利润 狗粮加工利润怎么样</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-free-shadowrocket-node.htm" title="「12月6日」最高速度18.3M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「12月6日」最高速度18.3M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-node-share-links.htm" title="「1月26日」最高速度21.4M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费订阅地址分享">「1月26日」最高速度21.4M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-41526.htm" title="java Socket 一行一行地读和一行一行的写">java Socket 一行一行地读和一行一行的写</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-node-share-links.htm" title="「11月19日」最高速度18.4M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月19日」最高速度18.4M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-node-subscribe.htm" title="「12月25日」最高速度19.6M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费订阅地址分享">「12月25日」最高速度19.6M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-node-subscribe.htm" title="「10月22日」最高速度18.2M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「10月22日」最高速度18.2M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-31-clash-v2ray-ss-ssr.htm" title="「10月31日」最高速度21.2M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「10月31日」最高速度21.2M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19278.htm" title="王允海宠物医院简介图片高清（王允海宠物医院怎么样）">王允海宠物医院简介图片高清（王允海宠物医院怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-18855.htm" title="有没有免费领养宠物的app（免费领养宠物狗的软件）">有没有免费领养宠物的app（免费领养宠物狗的软件）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

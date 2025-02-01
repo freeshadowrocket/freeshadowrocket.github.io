@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-47959.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Springboot连接MySQL数据库</title>
+        <meta name="description" content="(28条消息) SpringBoot连接mysql数据库_wscra的博客-CSDN博客_springboot连接mysqlhttps://blog.csdn.net/m0_46670757/arti" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-47959.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="Springboot连接MySQL数据库" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/edaf5798257318a80c710627795cd1bb.webp" />
+        <meta property="og:release_date" content="2025-01-29T10:28:10" />
+    <meta property="og:updated_time" content="2025-01-29T10:28:10" />
+        <meta property="og:description" content="(28条消息) SpringBoot连接mysql数据库_wscra的博客-CSDN博客_springboot连接mysqlhttps://blog.csdn.net/m0_46670757/arti" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Springboot连接MySQL数据库">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+                        <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>Springboot连接MySQL数据库</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2> <a class="has-card" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/m0_46670757/article/details/114778839"  title="(28条消息) SpringBoot连接mysql数据库_wscra的博客-CSDN博客_springboot连接mysql" rel="nofollow"><span class="link-card-box"><span class="link-title">(28条消息) SpringBoot连接mysql数据库_wscra的博客-CSDN博客_springboot连接mysql</span><span class="link-link"><img decoding="async" alt="" class="link-link-icon" src="http://img.555519.xyz/uploads/20230108/31bc4e3524ef890e42654f851a230e84.jpg">https://blog.csdn.net/m0_46670757/article/details/114778839</span></span></a>引入依赖</h2> <p><a class="has-card" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43231076/article/details/93666114"  title="(28条消息) Spring Boot学习笔记（11）—— SpringBoot整合SpringDataJdbc_songsongDBB28的博客-CSDN博客" rel="nofollow"><span class="link-card-box"><span class="link-title">(28条消息) Spring Boot学习笔记（11）—— SpringBoot整合SpringDataJdbc_songsongDBB28的博客-CSDN博客</span><span class="link-link"><img decoding="async" alt="" class="link-link-icon" src="http://img.555519.xyz/uploads/20230108/31bc4e3524ef890e42654f851a230e84.jpg">https://blog.csdn.net/weixin_43231076/article/details/93666114</span></span></a>不同于教程中的，整合mysql要引入mysql驱动包和jdbc驱动包两个依赖</p> <h2>配置jdbc属性</h2> <p>URL写法：jdbc:mysql://主机名称（localhost（本地主机））：连接端口（3306）/数据库的名称（c003）?参数=值（确保不会乱码）</p> <p style="margin-left:0;">mysql8.0以上url后必须加时区，driver要加com.mysql.cj.jdbc.Driver</p> <pre><code class="language-perl">#mysql spring.datasource.username=toolbox_rw spring.datasource.password=HO7Ch9j4852GBt3 #mysql8.0以上必须加时区，driver要加cj #jdbc:mysql://主机名称（localhost（本地主机））：连接端口（3306）/数据库的名称（c003）?参数=值（确保不会乱码） spring.datasource.url=jdbc:mysql://10.16.147.55:3306/toolbox?serverTimezone=GMT%2B8 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</code></pre> <h2>利用JdbcTemplate创建控制类</h2> <h2>@RequestMapping和@GetMapping的区别</h2> <p>RequestMapping 具有类属性的，可以进行 GET,POST,PUT 或者其它的注释中具有的请求方法。 GetMapping 是 GET 请求方法中的一个特例。它只是 ResquestMapping 的一个延伸，目的是为了提高清晰度。</p> </h1> <p>上周项目成功运行，结果这周启动之后就报这个错了，查了资料说是配置有问题，但上周启动成功之后没有改过，配置应该没错，后来重新编译maven后解决了。应该每次启动后都要重新编译maven</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-47468.htm">开宠物食品加工厂需要什么手续（开个宠物食品厂要投资多少钱）</a></p>
+                                        <p>下一个：<a href="/news/article-47960.htm">python2.7 之无解的yaml版本问题</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-22025.htm" title="动物打完疫苗需要注意什么事项（动物打了疫苗）">动物打完疫苗需要注意什么事项（动物打了疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-28507.htm" title="Redis如何无锁应对并发访问及如何实现分布式锁">Redis如何无锁应对并发访问及如何实现分布式锁</a></li>
+                        <li class="py-2"><a href="/news/article-37566.htm" title="Vue3中如何使用ref获取元素节点全面解析">Vue3中如何使用ref获取元素节点全面解析</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-clash-v2ray-ss-ssr.htm" title="「12月31日」最高速度18.9M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费订阅地址分享">「12月31日」最高速度18.9M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-free-node-subscribe.htm" title="「1月30日」最高速度20.3M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费订阅地址分享">「1月30日」最高速度20.3M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-30395.htm" title="猫三针疫苗多少钱一只啊（猫猫的三针疫苗多少钱）">猫三针疫苗多少钱一只啊（猫猫的三针疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-23-node-share-links.htm" title="「10月23日」最高速度20.9M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「10月23日」最高速度20.9M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-clash-v2ray-ss-ssr.htm" title="「12月18日」最高速度20.8M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「12月18日」最高速度20.8M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-37080.htm" title="vue路由自动加载、按组件异步载入vuex以及dll优化">vue路由自动加载、按组件异步载入vuex以及dll优化</a></li>
+                        <li class="py-2"><a href="/news/article-47001.htm" title="SpringBoot整合ActiveMQ（入门）">SpringBoot整合ActiveMQ（入门）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
