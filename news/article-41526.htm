@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-41526.htm" />
@@ -19,14 +19,31 @@
     <meta property="og:updated_time" content="2025-01-16T09:12:39" />
         <meta property="og:description" content="最近在写与socket有关的编程，遇到了一个问题——如何一行一行的从服务器文件读出来，然后通过socket发到客户端，在客户端有一行一行的写入文件。刚开始，一行一行的读是没有什么问题的，可是流发到客户" />
         
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="java Socket 一行一行地读和一行一行的写">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
     <!-- Vendor CSS Files -->
-    <link href="__ADDON__/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
     <!-- Template Main CSS File -->
     <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
@@ -48,7 +65,7 @@
         <div class="container d-flex align-items-center">
                         <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
                         <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                                         <li><a class="nav-link" href="/">首页</a></li>
@@ -93,16 +110,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-ssr-subscribe.htm" title="「11月28日」最高速度18.4M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「11月28日」最高速度18.4M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-28043.htm" title="Vue 列表渲染中的key">Vue 列表渲染中的key</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-15-free-ssr-subscribe.htm" title="「11月15日」最高速度22.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「11月15日」最高速度22.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-node-subscribe.htm" title="「10月22日」最高速度18.2M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「10月22日」最高速度18.2M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-34206.htm" title="一所动物医院的英文翻译（一所动物医院的英文翻译）">一所动物医院的英文翻译（一所动物医院的英文翻译）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-23-free-ssr-subscribe.htm" title="「11月23日」最高速度22.8M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「11月23日」最高速度22.8M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-1-node-share-links.htm" title="「12月1日」最高速度20.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「12月1日」最高速度20.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-22480.htm" title="实现mysql主从复制、读写分离">实现mysql主从复制、读写分离</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-1-free-node-subscribe-links.htm" title="「1月1日」最高速度21.4M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费订阅地址分享">「1月1日」最高速度21.4M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/news/article-21110.htm" title="docker存储目录详解">docker存储目录详解</a></li>
+                        <li class="py-2"><a href="/news/article-22939.htm" title="济南领养猫2020（济南领养猫的医院）">济南领养猫2020（济南领养猫的医院）</a></li>
+                        <li class="py-2"><a href="/news/article-29913.htm" title="动物医院名字有创意吗女生怎么取（动物医院有什么）">动物医院名字有创意吗女生怎么取（动物医院有什么）</a></li>
+                        <li class="py-2"><a href="/news/article-34686.htm" title="Halo 开源项目学习发布文章与页面">Halo 开源项目学习发布文章与页面</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-node-share-links.htm" title="「11月25日」最高速度20.7M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「11月25日」最高速度20.7M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27580.htm" title="猫咪疫苗可以自己打不（猫疫苗可以自己打么）">猫咪疫苗可以自己打不（猫疫苗可以自己打么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-shadowrocket-node.htm" title="「12月27日」最高速度20.7M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费订阅地址分享">「12月27日」最高速度20.7M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-48366.htm" title="Redis 主从同步原理解析">Redis 主从同步原理解析</a></li>
+                        <li class="py-2"><a href="/news/article-41047.htm" title="上海宠物领养基地电话号码（上海宠物领养中心电话）">上海宠物领养基地电话号码（上海宠物领养中心电话）</a></li>
+                        <li class="py-2"><a href="/news/article-44511.htm" title="急售二手颗粒饲料机一台多少钱（二手颗粒饲料机饲料颗粒机）">急售二手颗粒饲料机一台多少钱（二手颗粒饲料机饲料颗粒机）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-node-share-links.htm" title="「11月16日」最高速度18.6M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「11月16日」最高速度18.6M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -114,16 +131,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

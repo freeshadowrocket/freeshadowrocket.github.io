@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-31263.htm" />
@@ -8,14 +8,42 @@
     <title>在边缘计算场景中使用Dapr</title>
         <meta name="description" content="Dapr 是分布式应用程序可移植、事件驱动的运行时， 这里有几个关键字，我们拆开来看一下：  分布式： 代表共享或是分散，在云原生应用上体现为微服务，在边缘计算场景中代表分散的模块，可以做积木式拼接。" />
         <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-31263.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="在边缘计算场景中使用Dapr" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/7d0be8a96d9c222e4064fdcc3ac9db44.webp" />
+        <meta property="og:release_date" content="2024-12-26T00:12:15" />
+    <meta property="og:updated_time" content="2024-12-26T00:12:15" />
+        <meta property="og:description" content="Dapr 是分布式应用程序可移植、事件驱动的运行时， 这里有几个关键字，我们拆开来看一下：  分布式： 代表共享或是分散，在云原生应用上体现为微服务，在边缘计算场景中代表分散的模块，可以做积木式拼接。" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="在边缘计算场景中使用Dapr">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
     <!-- Vendor CSS Files -->
-    <link href="__ADDON__/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="__ADDON__/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
     <!-- Template Main CSS File -->
     <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
@@ -37,7 +65,7 @@
         <div class="container d-flex align-items-center">
                         <a href="/"><span class="logo me-auto">Free Shadowrocket</span></a>
                         <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img href="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                                         <li><a class="nav-link" href="/">首页</a></li>
@@ -82,16 +110,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-25719.htm" title="猫粮品牌推荐（猫粮品牌推荐大全）">猫粮品牌推荐（猫粮品牌推荐大全）</a></li>
-                        <li class="py-2"><a href="/news/article-31839.htm" title="Python 基础系列 11 &#8211; Python 异常处理 Exception Handling">Python 基础系列 11 &#8211; Python 异常处理 Exception Handling</a></li>
-                        <li class="py-2"><a href="/news/article-20649.htm" title="Linux网络服务之NFS共享服务">Linux网络服务之NFS共享服务</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share.htm" title="「11月29日」最高速度18.4M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「11月29日」最高速度18.4M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-25-node-share-links.htm" title="「9月25日」最高速度20.1M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「9月25日」最高速度20.1M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-10-free-subscribe-node.htm" title="「9月10日」最高速度20.4M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「9月10日」最高速度20.4M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-24-free-ssr-node.htm" title="「9月24日」最高速度21.2M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「9月24日」最高速度21.2M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-18-node-share-links.htm" title="「11月18日」最高速度19.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「11月18日」最高速度19.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-26-free-node-subscribe.htm" title="「9月26日」最高速度19.4M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「9月26日」最高速度19.4M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-4-node-share.htm" title="「10月4日」最高速度21.2M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「10月4日」最高速度21.2M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-33249.htm" title="动物一针疫苗多少钱（动物疫苗多少钱一支）">动物一针疫苗多少钱（动物疫苗多少钱一支）</a></li>
+                        <li class="py-2"><a href="/news/article-24317.htm" title="中国兽药网价格表（兽药报价网）">中国兽药网价格表（兽药报价网）</a></li>
+                        <li class="py-2"><a href="/news/article-28973.htm" title="动物打疫苗需要什么资质（动物打疫苗需要什么资质和证书）">动物打疫苗需要什么资质（动物打疫苗需要什么资质和证书）</a></li>
+                        <li class="py-2"><a href="/news/article-44034.htm" title="宠物粮食代工（宠物粮食代工一吨2万一贵吗知乎）">宠物粮食代工（宠物粮食代工一吨2万一贵吗知乎）</a></li>
+                        <li class="py-2"><a href="/news/article-42032.htm" title="windows 平台下编译openssl 最新版本-3.0.5">windows 平台下编译openssl 最新版本-3.0.5</a></li>
+                        <li class="py-2"><a href="/news/article-43515.htm" title="宠物狗批发基地（宠物犬批发基地）">宠物狗批发基地（宠物犬批发基地）</a></li>
+                        <li class="py-2"><a href="/news/article-24319.htm" title="塞尔达海拉鲁是什么（塞尔达传说海拉鲁猜谜答案）">塞尔达海拉鲁是什么（塞尔达传说海拉鲁猜谜答案）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-shadowrocket-node.htm" title="「12月21日」最高速度18.7M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费订阅地址分享">「12月21日」最高速度18.7M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-48968.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-ssr-subscribe.htm" title="「11月8日」最高速度22.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「11月8日」最高速度22.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -103,22 +131,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

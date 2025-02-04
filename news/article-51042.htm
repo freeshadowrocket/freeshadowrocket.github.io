@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-51042.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>MySQL 案例分析讲解外连接语法_Mysql</title>
+        <meta name="description" content="目录  前言 左连接 例 1 右连接 例2 作业记录    前言 外连接可以分为左外连接和右外连接 左外连接: 包含左边表的全部行（不管右边的表中是否存在与它们匹配的行），以及右边表中全部匹配的行 右" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-51042.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="MySQL 案例分析讲解外连接语法_Mysql" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/c7e09e9790694cf2208a0faf3c366866.webp" />
+        <meta property="og:release_date" content="2025-02-04T00:28:58" />
+    <meta property="og:updated_time" content="2025-02-04T00:28:58" />
+        <meta property="og:description" content="目录  前言 左连接 例 1 右连接 例2 作业记录    前言 外连接可以分为左外连接和右外连接 左外连接: 包含左边表的全部行（不管右边的表中是否存在与它们匹配的行），以及右边表中全部匹配的行 右" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MySQL 案例分析讲解外连接语法_Mysql">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>MySQL 案例分析讲解外连接语法_Mysql</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">前言</a></li> <li><a href="#_label1" rel="nofollow">左连接</a></li> <li><a href="#_label2" rel="nofollow">例 1</a></li> <li><a href="#_label3" rel="nofollow">右连接</a></li> <li><a href="#_label4" rel="nofollow">例2</a></li> <li><a href="#_label5" rel="nofollow">作业记录</a></li> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>前言</h2> <p>外连接可以分为左外连接和右外连接</p> <p>左外连接: 包含左边表的全部行（不管右边的表中是否存在与它们匹配的行），以及右边表中全部匹配的行</p> <p>右外连接: 包含右边表的全部行（不管左边的表中是否存在与它们匹配的行），以及左边表中全部匹配的行</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>左连接</h2> <p>左外连接又称为左连接，使用 LEFT OUTER JOIN 关键字连接两个表，并使用 ON 子句来设置连接条件。</p> <p>左连接的语法格式如下：</p> <blockquote> <p>SELECT &lt;字段名&gt; FROM &lt;表1&gt; LEFT OUTER JOIN &lt;表2&gt;</p> </blockquote> <p>语法说明如下：</p> <p>字段名：需要查询的字段名称。</p> <p>&lt;表1&gt;&lt;表2&gt;：需要左连接的表名。</p> <p>LEFT OUTER JOIN：左连接中可以省略 OUTER 关键字，只使用关键字 LEFT JOIN。</p> <p>ON 子句：用来设置左连接的连接条件，不能省略。</p> <p>上述语法中，“表1”为基表，“表2”为参考表。左连接查询时，可以查询出“表1”中的所有记录和“表2”中匹配连接条件的记录。如果“表1”的某行在“表2”中没有匹配行，那么在返回结果中，“表2”的字段值均为空值（NULL）。</p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>例 1</h2> <p>在进行左连接查询之前，我们先查看 tb_course 和 tb_students_info 两张表中的数据。SQL 语句和运行结果如下。</p> <div class="ay1code"> <pre class="brush:sql;">mysql&gt; SELECT * FROM tb_course;    +----+-------------+  | id | course_name |  +----+-------------+  |  1 | Java        |  |  2 | MySQL       |  |  3 | Python      |  |  4 | Go          |  |  5 | C++         |  |  6 | HTML        |  +----+-------------+  6 rows in set (0.00 sec)  mysql&gt; SELECT * FROM tb_students_info;  +----+--------+------+------+--------+-----------+  | id | name   | age  | sex  | height | course_id |  +----+--------+------+------+--------+-----------+  |  1 | Dany   |   25 | 男   |    160 |         1 |  |  2 | Green  |   23 | 男   |    158 |         2 |  |  3 | Henry  |   23 | 女   |    185 |         1 |  |  4 | Jane   |   22 | 男   |    162 |         3 |  |  5 | Jim    |   24 | 女   |    175 |         2 |  |  6 | John   |   21 | 女   |    172 |         4 |  |  7 | Lily   |   22 | 男   |    165 |         4 |  |  8 | Susan  |   23 | 男   |    170 |         5 |  |  9 | Thomas |   22 | 女   |    178 |         5 |  | 10 | Tom    |   23 | 女   |    165 |         5 |  | 11 | LiMing |   22 | 男   |    180 |         7 |  +----+--------+------+------+--------+-----------+  11 rows in set (0.00 sec)  </pre> </div> <p>在 tb_students_info 表和 tb_course 表中查询所有学生姓名和相对应的课程名称，包括没有课程的学生，SQL 语句和运行结果如下。</p> <div class="ay1code"> <pre class="brush:sql;">mysql&gt; SELECT s.name,c.course_name FROM tb_students_info s LEFT OUTER JOIN tb_course c      -&gt; ON s.`course_id`=c.`id`;  +--------+-------------+  | name   | course_name |  +--------+-------------+  | Dany   | Java        |  | Henry  | Java        |  | NULL   | Java        |  | Green  | MySQL       |  | Jim    | MySQL       |  | Jane   | Python      |  | John   | Go          |  | Lily   | Go          |  | Susan  | C++         |  | Thomas | C++         |  | Tom    | C++         |  | LiMing | NULL        |  +--------+-------------+  12 rows in set (0.00 sec)  </pre> </div> <p>可以看到，运行结果显示了 12 条记录，name 为 LiMing 的学生目前没有课程，因为对应的 tb_course 表中没有该学生的课程信息，所以该条记录只取出了 tb_students_info 表中相应的值，而从 tb_course 表中取出的值为 NULL。</p> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>右连接</h2> <p>右外连接又称为右连接，右连接是左连接的反向连接。使用 RIGHT OUTER JOIN 关键字连接两个表，并使用 ON 子句来设置连接条件。</p> <p>语法说明如下：</p> <p>字段名：需要查询的字段名称。</p> <p>&lt;表1&gt;&lt;表2&gt;：需要右连接的表名。</p> <p>RIGHT OUTER JOIN：右连接中可以省略 OUTER 关键字，只使用关键字 RIGHT JOIN。</p> <p>ON 子句：用来设置右连接的连接条件，不能省略。</p> <p>与左连接相反，右连接以“表2”为基表，“表1”为参考表。右连接查询时，可以查询出“表2”中的所有记录和“表1”中匹配连接条件的记录。如果“表2”的某行在“表1”中没有匹配行，那么在返回结果中，“表1”的字段值均为空值（NULL）。</p> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2>例2</h2> <p>在 tb_students_info 表和 tb_course 表中查询所有课程，包括没有学生的课程，SQL 语句和运行结果如下。</p> <div class="ay1code"> <pre class="brush:sql;">mysql&gt; SELECT s.name,c.course_name FROM tb_students_info s RIGHT OUTER JOIN tb_course c      -&gt; ON s.`course_id`=c.`id`;  +--------+-------------+  | name   | course_name |  +--------+-------------+  | Dany   | Java        |  | Green  | MySQL       |  | Henry  | Java        |  | Jane   | Python      |  | Jim    | MySQL       |  | John   | Go          |  | Lily   | Go          |  | Susan  | C++         |  | Thomas | C++         |  | Tom    | C++         |  | NULL   | HTML        |  +--------+-------------+  11 rows in set (0.00 sec)  </pre> </div> <p>可以看到，结果显示了 11 条记录，名称为 HTML 的课程目前没有学生，因为对应的 tb_students_info 表中并没有该学生的信息，所以该条记录只取出了 tb_course 表中相应的值，而从 tb_students_info 表中取出的值为 NULL。</p> <p>多个表左/右连接时，在 ON 子句后连续使用 LEFT/RIGHT OUTER JOIN 或 LEFT/RIGHT JOIN 即可。</p> <p>使用外连接查询时，一定要分清需要查询的结果，是需要显示左表的全部记录还是右表的全部记录，然后选择相应的左连接和右连接。</p> <p class="maodian"><a name="_label5" rel="nofollow"></a></p> <h2>作业记录</h2> <p>先建立 users表</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220420/672e776e95e6183e550e563d800f01a4.jpg"></p> <p>orders表</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220420/779ab0f871f7c436e1c3a427c08a365d.jpg"></p> <div class="ay1code"> <pre class="brush:sql;">-- 查询每个用户的订单购买数量，列出uID，uName，buyNum  SELECT s.uid,s.uName,buyNum  FROM users s LEFT JOIN orders t          ON s.uID=t.uID;  </pre> </div> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220420/43b192d99ad43db538bbcf540684cb7f.jpg"></p> <div class="ay1code"> <pre class="brush:sql;">--查询每个用户的订单数，列出uID，uName，ordernum(订单数)  SELECT s.uid,s.uName,count(t.uid) as ordernum  FROM orders t RIGHT JOIN users s  				ON s.uid=t.uid  GROUP BY s.uid;  -- 王麻子有两次订单数 其余都是一次  </pre> </div> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220420/9558762a6af56754156723b3d1483651.jpg"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-50507.htm">厦门同安宠物领养中心地址在哪里（同安宠物店哪家好）</a></p>
+                                        <p>下一个：<a href="/news/article-51043.htm">小猫养多久才知道自己的名字了呢（幼猫养多久能知道主人叫它）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-32777.htm" title="兽医资格证需要什么条件才能考（成人自考兽医专业）">兽医资格证需要什么条件才能考（成人自考兽医专业）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-ssr-subscribe.htm" title="「12月9日」最高速度18.2M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「12月9日」最高速度18.2M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22025.htm" title="动物打完疫苗需要注意什么事项（动物打了疫苗）">动物打完疫苗需要注意什么事项（动物打了疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-46483.htm" title="狗领养协议有没有法律效应（领养狗协议书范本）">狗领养协议有没有法律效应（领养狗协议书范本）</a></li>
+                        <li class="py-2"><a href="/news/article-21110.htm" title="docker存储目录详解">docker存储目录详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-shadowrocket-node.htm" title="「12月21日」最高速度18.7M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费订阅地址分享">「12月21日」最高速度18.7M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-shadowrocket-node.htm" title="「12月27日」最高速度20.7M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费订阅地址分享">「12月27日」最高速度20.7M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-41047.htm" title="上海宠物领养基地电话号码（上海宠物领养中心电话）">上海宠物领养基地电话号码（上海宠物领养中心电话）</a></li>
+                        <li class="py-2"><a href="/news/article-22939.htm" title="济南领养猫2020（济南领养猫的医院）">济南领养猫2020（济南领养猫的医院）</a></li>
+                        <li class="py-2"><a href="/news/article-18855.htm" title="有没有免费领养宠物的app（免费领养宠物狗的软件）">有没有免费领养宠物的app（免费领养宠物狗的软件）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

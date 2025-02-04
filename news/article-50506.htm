@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-50506.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>零宽断言正则表达式替换方案</title>
+        <meta name="description" content="一、背景 safari浏览器不支持零宽断言正则表达式  二、解决方案 使用其他正则替换零宽断言正则（包含：(?&lt;=)正向肯定预查、(?&lt;!)正向否定预查、(?=)反向肯定预查、(?!)反向" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-50506.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="零宽断言正则表达式替换方案" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/3d78a363fcf89b549bf9286d2f52c645.webp" />
+        <meta property="og:release_date" content="2025-02-03T09:27:15" />
+    <meta property="og:updated_time" content="2025-02-03T09:27:15" />
+        <meta property="og:description" content="一、背景 safari浏览器不支持零宽断言正则表达式  二、解决方案 使用其他正则替换零宽断言正则（包含：(?&lt;=)正向肯定预查、(?&lt;!)正向否定预查、(?=)反向肯定预查、(?!)反向" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="零宽断言正则表达式替换方案">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                        <li><a class="nav-link" href="#">关于</a></li>
+                    <li><a class="nav-link" href="#">联系</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>零宽断言正则表达式替换方案</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p id="uc09bd2f0">一、背景</p> <p id="ue990aa9c">safari浏览器不支持零宽断言正则表达式</p> <p id="u30c00588"> <p id="ud0386db5">二、解决方案</p> <p id="u966e51e4">使用其他正则替换零宽断言正则（包含：(?&lt;=)正向肯定预查、(?&lt;!)正向否定预查、(?=)反向肯定预查、(?!)反向否定预查）</p> <p id="ua8ebbc61"> <p id="ua0de25fc">三、涉及场景</p> <p id="uf4a6bdcf">1、仅校验，不取值</p> <p id="uaa89c6f3">如表单正则校验，如editor\src\editor\Editor\constant\todoPropsList.js:2093,此类场景可能需要重新编写（改动可能较大）正则, 无需经过zeroWidthRegPolyfill方法</p> <p><img fetchpriority="high" decoding="async" alt="" height="368" src="http://img.555519.xyz/uploads/20230207/7d5e3ffc81b070362412b326e8ad871b.jpg"></p> <p>&nbsp;</p> <p id="u3e9655b8">2、校验，并取值</p> <p id="u6eb293e6">2.1、正则表达式不含g</p> <p id="u22ba741e">如packages\editor\src\CompEvent\hooks\useFunctionValue.tsx:17,需注意改写表达式后，后续取值可能会跟随分组而变化，无需经过zeroWidthRegPolyfill方法</p> <p class="img-center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/f7049a442fe28b526dfb1c1e4e7e21d4.jpg"></p> <p id="u4a78da79">2.2、正则表达式含g</p> <p id="u71565f08">如editor\src\editor\Editor\components\pageDetail\CodeMirrorModal\CodeMirrorModal.jsx:87,将正则/(?&lt;=actionMap(\['|\[|\.))[^.[\s"']+?(?==|\s|'|])/g，改为/actionMap(\['|\[|\.)([^.[\s"']+?)(=|\s|'|])+?/g ，使用zeroWidthRegPolyfill方法处理</p> <p id="u3c435831"><img decoding="async" src="http://img.555519.xyz/uploads/20230207/134668f71d976eaa63e74874cdde1e38.jpg" alt="零宽断言正则表达式替换方案"></p> <p id="u543fa631"> <p id="u8158be77">四、方法使用说明</p> <p id="ud68efe56">涉及方法(主要处理正则含g的正则表达式)：</p> <p id="udc6a2441">packages\editor\src\utils\common.ts -&gt; zeroWidthRegPolyfill(str, reg, n=1)</p> <pre><code class="language-javascript">const zeroWidthRegPolyfill = (str, reg, n = 1) =&gt; {   let result = null;   const originRegStr = reg.toString();   const regStr = originRegStr.replace(/^\/(.*)+?(\/|\/g)$/, '$1');   const regWithoutG = new RegExp(regStr);   if (originRegStr.endsWith('g')) {     const arr = str.match(reg);     if (!arr) {       return result;     }     result = [];     arr.forEach((it) =&gt; {       result.push(it?.match(regWithoutG)?.[n]);     });   } else {     result = str.match(regWithoutG);   }   return result; };</code></pre> <p id="u8b3f0767">1、reg含g，入参为校验字符串str、不含零宽的正则reg，以及需要真正匹配获取的字符所在的分组（必须对需要获取的字符分组）的序号n。str.match(reg)返回含目标字符的字符串数组，需要通过it?.match(regWithoutG)?.[n]二次处理，返回仅含目标字符的字符串数组</p> <p>1.1、至于为啥要二次处理，这里需要知道match的使用及返回值，以下做简要对比：</p> <p><img decoding="async" alt="" height="452" src="http://img.555519.xyz/uploads/20230207/87745f4f66412ea96027c3bf0a522f65.jpg"></p> <p>&nbsp;1.2、当然，使用matchAll能够一次性获取所有的匹配，并且返回带有分组信息的数组，但ie浏览器不支持</p> <p><img decoding="async" alt="" height="641" src="http://img.555519.xyz/uploads/20230207/d35f6dc9483ab25e8f16eae2e47ee189.jpg"></p> <p>&nbsp;</p> <p id="u3040e720">2、如传入不含g的表达式，则效果等同str.match(reg)。</p> <p>3、使用该方法与零宽断言的区别</p> <p>先看案例：</p> <p><img loading="lazy" decoding="async" alt="" height="125" src="http://img.555519.xyz/uploads/20230207/814d6d658966026110d953f894134df9.jpg"></p> <p>&nbsp;<img loading="lazy" decoding="async" alt="" height="87" src="http://img.555519.xyz/uploads/20230207/edee0f35419cbcee6a5a7e11dcff7fa7.jpg"></p> <p>&nbsp;可以发现，零宽实现匹配了3个结果，非零宽匹配了2个结果，这是因为“零宽正则”匹配完了之后，会从匹配到的字符开始继续匹配，<span style="color:#fe2c24;">预查</span>不消耗字符</p> <p>一般场景，其实是需要消耗字符的。但是，如果需要完全与零宽正则相匹配，则需要使用升级版方法。</p> <pre><code class="language-javascript">const zeroWidthRegPolyfillPlus = (str, reg, n = 1) =&gt; {   let result = null;   const originRegStr = reg.toString();   const regStr = originRegStr.replace(/^\/(.*)+?(\/|\/g)$/, '$1');   const regWithoutG = new RegExp(regStr);   let hasMatch = true;   // 实现零宽预查补偿消耗字符，循环匹配   // const loopReg = (_str, res) =&gt; {   //   hasMatch = false;   //   const nextStr = _str.replace(regWithoutG, function () {   //     hasMatch = true;   //     res.push(arguments[n]);   //     return arguments[n + 1];   //   });   //   if (hasMatch) {   //     loopReg(nextStr, res);   //   }   // };   if (originRegStr.endsWith('g')) {     result = [];     // 实现补偿方法一：     // loopReg(str, result);     // 实现补偿方法二：     let nextStr = str;     while (hasMatch) {       hasMatch = false;       nextStr = nextStr.replace(regWithoutG, function () {         hasMatch = true;         result.push(arguments[n]);         return arguments[n + 1];       });     }   } else {     result = str.match(regWithoutG);   }   return result; };  // 目标：查找$$之间包裹的所有字符串 const str = '$abc$d$ef$'; // 1、零宽实现 const regZero = /(?&lt;=\$).*?(?=\$)/g; let result = str.match(regZero); console.log('result1:', result); // 返回 result = ['abc', 'd', 'ef'] // 此处需要将正向肯定预查进行分组，以便方法中能够将预查的字符消耗重新补上 const reg = /\$(.*?)(\$)/g;  result = zeroWidthRegPolyfillPlus(str, reg); console.log('result2:', result); // 返回 result = ['abc', 'd', 'ef']</code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-49985.htm">宠物粮食市场规模多大（宠物主粮市场占有率）</a></p>
+                                        <p>下一个：<a href="/news/article-50507.htm">厦门同安宠物领养中心地址在哪里（同安宠物店哪家好）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-43515.htm" title="宠物狗批发基地（宠物犬批发基地）">宠物狗批发基地（宠物犬批发基地）</a></li>
+                        <li class="py-2"><a href="/news/article-39537.htm" title="华中农业大学动物医院价目表（华中农业大学动物医院收费）">华中农业大学动物医院价目表（华中农业大学动物医院收费）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-15-free-node-subscribe.htm" title="「1月15日」最高速度22M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费订阅地址分享">「1月15日」最高速度22M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-45496.htm" title="动物医院诊室如何管理 动物医院诊室如何管理好">动物医院诊室如何管理 动物医院诊室如何管理好</a></li>
+                        <li class="py-2"><a href="/news/article-38065.htm" title="兽用疫苗经营许可（兽用疫苗经营许可证需要什么条件）">兽用疫苗经营许可（兽用疫苗经营许可证需要什么条件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-free-shadowrocket-node.htm" title="「1月17日」最高速度21.4M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费订阅地址分享">「1月17日」最高速度21.4M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-48968.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
+                        <li class="py-2"><a href="/news/article-24317.htm" title="中国兽药网价格表（兽药报价网）">中国兽药网价格表（兽药报价网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-ssr-subscribe.htm" title="「11月8日」最高速度22.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「11月8日」最高速度22.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40543.htm" title="猫打疫苗去诊所还是医院（猫打疫苗是去宠物店还是宠物医院）">猫打疫苗去诊所还是医院（猫打疫苗是去宠物店还是宠物医院）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
