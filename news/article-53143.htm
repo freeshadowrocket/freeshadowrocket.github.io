@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-53143.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>docker设置代理服务器，解决pull命令：Error response from daemon: Get https://registry-1.docker.io/v2&#8230;</title>
+        <meta name="description" content="当虚拟机无法连接访问到外网https://registry-1.docker.io/v2，执行docker pull命令会抛出异常，如下： [root@localhost default]# dock" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-53143.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="docker设置代理服务器，解决pull命令：Error response from daemon: Get https://registry-1.docker.io/v2&#8230;" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/2332be8f1c4350905a2df1d4d6934f5d.webp" />
+        <meta property="og:release_date" content="2025-02-08T04:40:50" />
+    <meta property="og:updated_time" content="2025-02-08T04:40:50" />
+        <meta property="og:description" content="当虚拟机无法连接访问到外网https://registry-1.docker.io/v2，执行docker pull命令会抛出异常，如下： [root@localhost default]# dock" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="docker设置代理服务器，解决pull命令：Error response from daemon: Get https://registry-1.docker.io/v2&#8230;">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>docker设置代理服务器，解决pull命令：Error response from daemon: Get https://registry-1.docker.io/v2&#8230;</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <h2>当虚拟机无法连接访问到外网https://registry-1.docker.io/v2，执行docker pull命令会抛出异常，如下：</h2> <p>[root@localhost default]# docker pull debian<br />Using default tag: latest<br />Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)</p> <h2>通过设置代理可以解决：</h2> <ul> <li> <p>创建http-proxy.conf文件:</p> </li> </ul> <p>　　　　$ mkdir -p /etc/systemd/system/docker.service.d<br />　　　　$ vim /etc/systemd/system/docker.service.d/http-proxy.conf<br />　　添加如下内容：<br />　　　　[Service]<br />　　　　Environment="HTTP_PROXY=http://&lt;allowed_proxy_ipv4_address&gt;:&lt;proxy_port_num&gt;/"<br />　　　　[Service]<br />　　　　Environment="HTTPS_PROXY=https://&lt;allowed_proxy_ipv4_address&gt;:&lt;proxy_port_num&gt;/"</p> <ul> <li>执行reload命令: &nbsp;$ sudo systemctl daemon-reload</li> </ul> <ul> <li>重启docker: &nbsp;$ sudo systemctl restart docker</li> </ul> <ul> <li>查看环境变量值： $ systemctl show --property=Environment docker</li> </ul> <h2>再次执行：</h2> <p>[root@localhost docker.service.d]# docker pull debian<br />Using default tag: latest<br />latest: Pulling from library/debian<br />55cbf04beb70: Pull complete<br />Digest: sha256:f1f61086ea01a72b30c7287adee8c929e569853de03b7c462a8ac75e0d0224c4<br />Status: Downloaded newer image for debian:latest</p> </div> <p>转载于:https://www.cnblogs.com/onetwothree/p/9371752.html</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53142.htm">golang panic和recover 实现原理</a></p>
+                                        <p>下一个：<a href="/news/article-53667.htm">动物防疫方针是指什么内容（动物防疫实施办法）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-high-speed-nodes.htm" title="「1月8日」最高速度22.7M/S，2025年V2ray/Clash/Shadowrocket/SSR每天更新免费订阅地址分享">「1月8日」最高速度22.7M/S，2025年V2ray/Clash/Shadowrocket/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-18855.htm" title="有没有免费领养宠物的app（免费领养宠物狗的软件）">有没有免费领养宠物的app（免费领养宠物狗的软件）</a></li>
+                        <li class="py-2"><a href="/news/article-47002.htm" title="宠物店一年利润表（宠物店净利润）">宠物店一年利润表（宠物店净利润）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-free-subscribe-node.htm" title="「1月22日」最高速度18.7M/S，2025年V2ray/Shadowrocket/Clash/SSR每天更新免费订阅地址分享">「1月22日」最高速度18.7M/S，2025年V2ray/Shadowrocket/Clash/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-34686.htm" title="Halo 开源项目学习发布文章与页面">Halo 开源项目学习发布文章与页面</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-free-node-subscribe.htm" title="「2月4日」最高速度20.2M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费订阅地址分享">「2月4日」最高速度20.2M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-22028.htm" title="深圳市宠物领养 深圳市宠物领养之家官网">深圳市宠物领养 深圳市宠物领养之家官网</a></li>
+                        <li class="py-2"><a href="/news/article-23866.htm" title="什么品牌的粉底液好用?(什么品牌的粉底液好用,粉底液排行榜10强)">什么品牌的粉底液好用?(什么品牌的粉底液好用,粉底液排行榜10强)</a></li>
+                        <li class="py-2"><a href="/news/article-26164.htm" title="国内宠物粮食十大厂家排名（中国宠物粮厂家批发网）">国内宠物粮食十大厂家排名（中国宠物粮厂家批发网）</a></li>
+                        <li class="py-2"><a href="/news/article-44033.htm" title="重庆宠物领养中心电话号码是多少啊（重庆最大免费宠物领养平台）">重庆宠物领养中心电话号码是多少啊（重庆最大免费宠物领养平台）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
