@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-60417.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>ElasticSearch8 SpringBoot集成ElasticSearch8.x 基本应用 CRUD操作 环境安装详细步骤</title>
+        <meta name="description" content="最近在研究es的时候发现官方已经在7.15.0放弃对旧版本中的Java REST Client （High Level Rest Client (HLRC)）的支持，从而替换为推荐使用的Java AP" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-60417.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="ElasticSearch8 SpringBoot集成ElasticSearch8.x 基本应用 CRUD操作 环境安装详细步骤" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/41f0dc7c120256a862bc5c88201e7f31.webp" />
+        <meta property="og:release_date" content="2025-02-21T09:20:18" />
+    <meta property="og:updated_time" content="2025-02-21T09:20:18" />
+        <meta property="og:description" content="最近在研究es的时候发现官方已经在7.15.0放弃对旧版本中的Java REST Client （High Level Rest Client (HLRC)）的支持，从而替换为推荐使用的Java AP" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ElasticSearch8 SpringBoot集成ElasticSearch8.x 基本应用 CRUD操作 环境安装详细步骤">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>ElasticSearch8 SpringBoot集成ElasticSearch8.x 基本应用 CRUD操作 环境安装详细步骤</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>最近在研究es的时候发现官方已经在7.15.0放弃对旧版本中的Java REST Client （High Level Rest Client (HLRC)）的支持，从而替换为推荐使用的Java API Client 8.x</p> <p><img fetchpriority="high" decoding="async" alt="" height="306" src="http://img.555519.xyz/uploads3/20220602/b4d037c4b670590014001a652302b12c.jpg"></p> <p>查看SpringBoot2.6.4的依赖，其中es的版本仅为7.15.2</p> <pre><code>  &lt;dependency&gt;         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;         &lt;artifactId&gt;spring-boot-starter-data-elasticsearch&lt;/artifactId&gt;   &lt;/dependency&gt;    &lt;elasticsearch&gt;7.15.2&lt;/elasticsearch&gt;</code></pre> <p>因此这里我就按照官方文档使用了推荐的</p> <pre><code>&lt;dependency&gt;       &lt;groupId&gt;co.elastic.clients&lt;/groupId&gt;       &lt;artifactId&gt;elasticsearch-java&lt;/artifactId&gt;       &lt;version&gt;8.1.0&lt;/version&gt; &lt;/dependency&gt;</code></pre> <p>鉴于es8.x的资料文档目前并不是很齐全，本文中如有错误，欢迎各位指出。本文将记录一些es8.x api下的简单CRUD操作。</p> </h1> <p>SpringBoot 2.6.4 + ElasticSearch 8.1.0</p> </h1> <p>首先去官网下载最新的安装包<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.elastic.co/cn/downloads/elasticsearch"  title="Download Elasticsearch | Elastic" rel="nofollow">Download Elasticsearch | Elastic</a></p> <p><img decoding="async" alt="" height="626" src="http://img.555519.xyz/uploads3/20220602/4f5d9416bba66282cad890151ea93442.jpg"></p> <p>解压即可，进入/bin,启动elasticsearch.bat</p> <p>访问 127.0.0.1:9200,出现es的集群信息即安装成功</p> <h2>可视化界面elasticsearch-head安装</h2> <p>在github上搜索elasticsearch-head，下载他的源码</p> <p>进入源码目录执行（需安装Node.js）</p> <pre><code class="language-bash">npm install npm run start  Running "connect:server" (connect) task                                                                                  Waiting forever...                                                                                                       Started connect web server on http://localhost:9100</code></pre> <p>即可访问9100端口访问</p> <p><img decoding="async" alt="" height="266" src="http://img.555519.xyz/uploads3/20220602/39b3e8a7bf1fa9a0a9d6b8e7024f2231.jpg"></p> </h1> <pre><code class="language-XML">  &lt;dependency&gt;         &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;         &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;         &lt;version&gt;2.13.2&lt;/version&gt;   &lt;/dependency&gt;    &lt;dependency&gt;         &lt;groupId&gt;org.glassfish&lt;/groupId&gt;         &lt;artifactId&gt;jakarta.json&lt;/artifactId&gt;         &lt;version&gt;2.0.1&lt;/version&gt;   &lt;/dependency&gt;           &lt;dependency&gt;         &lt;groupId&gt;co.elastic.clients&lt;/groupId&gt;         &lt;artifactId&gt;elasticsearch-java&lt;/artifactId&gt;         &lt;version&gt;8.1.0&lt;/version&gt;   &lt;/dependency&gt;</code></pre> </h1> <pre><code class="language-java">@Configuration public class ElasticSearchConfig {      //注入IOC容器     @Bean     public ElasticsearchClient elasticsearchClient(){         RestClient client = RestClient.builder(new HttpHost("localhost", 9200,"http")).build();         ElasticsearchTransport transport = new RestClientTransport(client,new JacksonJsonpMapper());         return new ElasticsearchClient(transport);     } }</code></pre> </h1> <h2>增加index</h2> <pre><code class="language-java">  @Autowired   private ElasticsearchClient client;      @Test     public void createTest() throws IOException {                  //写法比RestHighLevelClient更加简洁         CreateIndexResponse indexResponse = client.indices().create(c -&gt; c.index("user"));     }</code></pre> <h2>查询Index</h2> <pre><code class="language-java">    @Test     public void queryTest() throws IOException {         GetIndexResponse getIndexResponse = client.indices().get(i -&gt; i.index("user"));     }</code></pre> <h2>&nbsp;判断index是否存在</h2> <pre><code class="language-java">    @Test     public void existsTest() throws IOException {         BooleanResponse booleanResponse = client.indices().exists(e -&gt; e.index("user"));         System.out.println(booleanResponse.value());     }</code></pre> <h2>删除index</h2> <pre><code class="language-java">@Test     public void deleteTest() throws IOException {         DeleteIndexResponse deleteIndexResponse = client.indices().delete(d -&gt; d.index("user"));         System.out.println(deleteIndexResponse.acknowledged());     }</code></pre> </h1> <p>这里准备了一个简单的实体类User用于测试</p> <pre><code class="language-java">@Data @AllArgsConstructor @NoArgsConstructor public class User {     private String name;     private Integer age; }</code></pre> <h2>插入document</h2> <pre><code class="language-java">    @Test     public void addDocumentTest() throws IOException {          User user = new User("user1", 10);         IndexResponse indexResponse = client.index(i -&gt; i                 .index("user")                  //设置id                 .id("1")                  //传入user对象                 .document(user));      }</code></pre> <p>进入可视化插件，可以看到数据已经成功插入</p> <p><img loading="lazy" decoding="async" alt="" height="353" src="http://img.555519.xyz/uploads3/20220602/7e684e622ce25592b865e95bc30b2e30.jpg"></p> <h2>&nbsp;更新Document</h2> <pre><code class="language-java">    @Test     public void updateDocumentTest() throws IOException {         UpdateResponse&lt;User&gt; updateResponse = client.update(u -&gt; u                         .index("user")                         .id("1")                         .doc(new User("user2", 13))                 , User.class);     }</code></pre> <h2>判断Document是否存在</h2> <pre><code class="language-java">    @Test     public void existDocumentTest() throws IOException {         BooleanResponse indexResponse = client.exists(e -&gt; e.index("user").id("1"));         System.out.println(indexResponse.value());     }</code></pre> <h2>查询Document</h2> <pre><code class="language-java">    @Test     public void getDocumentTest() throws IOException {         GetResponse&lt;User&gt; getResponse = client.get(g -&gt; g                         .index("user")                         .id("1")                 , User.class         );         System.out.println(getResponse.source());     }</code></pre> <p>返回</p> <pre><code>User(name=user2, age=13)</code></pre> <h2>删除Document</h2> <pre><code class="language-java">    @Test     public void deleteDocumentTest() throws IOException {         DeleteResponse deleteResponse = client.delete(d -&gt; d                 .index("user")                 .id("1")         );         System.out.println(deleteResponse.id());     }</code></pre> <h2>批量插入Document</h2> <pre><code class="language-java">    @Test     public void bulkTest() throws IOException {         List&lt;User&gt; userList = new ArrayList&lt;&gt;();         userList.add(new User("user1", 11));         userList.add(new User("user2", 12));         userList.add(new User("user3", 13));         userList.add(new User("user4", 14));         userList.add(new User("user5", 15));         List&lt;BulkOperation&gt; bulkOperationArrayList = new ArrayList&lt;&gt;();         //遍历添加到bulk中         for(User user : userList){             bulkOperationArrayList.add(BulkOperation.of(o-&gt;o.index(i-&gt;i.document(user))));         }               BulkResponse bulkResponse = client.bulk(b -&gt; b.index("user")                 .operations(bulkOperationArrayList));      }</code></pre> <p><img loading="lazy" decoding="async" alt="" height="291" src="http://img.555519.xyz/uploads3/20220602/82970c783903a8fead3cb6c5c3121af9.jpg"></p> </h1> <pre><code class="language-java">    @Test     public void searchTest() throws IOException {         SearchResponse&lt;User&gt; search = client.search(s -&gt; s                 .index("user")                 //查询name字段包含hello的document(不使用分词器精确查找)                 .query(q -&gt; q                         .term(t -&gt; t                                 .field("name")                                 .value(v -&gt; v.stringValue("hello"))                         ))                 //分页查询，从第0页开始查询3个document                 .from(0)                 .size(3)                 //按age降序排序                 .sort(f-&gt;f.field(o-&gt;o.field("age").order(SortOrder.Desc))),User.class         );         for (Hit&lt;User&gt; hit : search.hits().hits()) {             System.out.println(hit.source());         }     }</code></pre> <p>为了测试，我们先添加以下数据</p> <pre><code class="language-java">        List&lt;User&gt; userList = new ArrayList&lt;&gt;();         userList.add(new User("hello world", 11));         userList.add(new User("hello java", 12));         userList.add(new User("hello es", 13));         userList.add(new User("hello spring", 14));         userList.add(new User("user", 15));</code></pre> <p>查询结果：</p> <pre><code>User(name=hello spring, age=14) User(name=hello es, age=13) User(name=hello java, age=12)</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-59845.htm">人打了动物的狂犬疫苗（狂犬疫苗动物打了人还要打吗）</a></p>
+                                        <p>下一个：<a href="/news/article-60418.htm">宠物医院美团好评回复大全（宠物医院美团评价）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-22480.htm" title="实现mysql主从复制、读写分离">实现mysql主从复制、读写分离</a></li>
+                        <li class="py-2"><a href="/news/article-54774.htm" title="React+ts 中定义事件声明类型">React+ts 中定义事件声明类型</a></li>
+                        <li class="py-2"><a href="/news/article-57564.htm" title="动物疫苗的作用有哪些方面呢 动物疫苗的作用有哪些方面呢英语">动物疫苗的作用有哪些方面呢 动物疫苗的作用有哪些方面呢英语</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-ssr-node.htm" title="「11月12日」最高速度19.5M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「11月12日」最高速度19.5M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-37080.htm" title="vue路由自动加载、按组件异步载入vuex以及dll优化">vue路由自动加载、按组件异步载入vuex以及dll优化</a></li>
+                        <li class="py-2"><a href="/news/article-59845.htm" title="人打了动物的狂犬疫苗（狂犬疫苗动物打了人还要打吗）">人打了动物的狂犬疫苗（狂犬疫苗动物打了人还要打吗）</a></li>
+                        <li class="py-2"><a href="/news/article-61021.htm" title="springboot整合spring retry 重试机制">springboot整合spring retry 重试机制</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-node-share.htm" title="「1月12日」最高速度18.6M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费订阅地址分享">「1月12日」最高速度18.6M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-free-node-subscribe.htm" title="「1月30日」最高速度20.3M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费订阅地址分享">「1月30日」最高速度20.3M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-51546.htm" title="java socket 同时读写_java 中的 BIO/NIO/AIO 详解">java socket 同时读写_java 中的 BIO/NIO/AIO 详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
