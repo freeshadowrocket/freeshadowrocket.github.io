@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-81803.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>C语言字符串、字符数组、字符指针</title>
+        <meta name="description" content="目录 一、字符数组 （1）字符数组的定义 （2）字符数组的初始化 二、字符串 （1）字符串的概念 （2）用字符串初始化字符字符数组 （3）获取字符串的长度 三、字符串与指针 四、字符数组与字符指针  " />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-81803.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="C语言字符串、字符数组、字符指针" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/a56502512b8aa2a101f21c552eba3153.webp" />
+        <meta property="og:release_date" content="2025-03-26T08:56:37" />
+    <meta property="og:updated_time" content="2025-03-26T08:56:37" />
+        <meta property="og:description" content="目录 一、字符数组 （1）字符数组的定义 （2）字符数组的初始化 二、字符串 （1）字符串的概念 （2）用字符串初始化字符字符数组 （3）获取字符串的长度 三、字符串与指针 四、字符数组与字符指针  " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C语言字符串、字符数组、字符指针">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>C语言字符串、字符数组、字符指针</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h3 id="main-toc"><strong>目录</strong></h3> <p id="%E4%B8%80%E3%80%81%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84-toc" style="margin-left:0px;"><a href="#%E4%B8%80%E3%80%81%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84" rel="nofollow">一、字符数组</a></p> <p id="%EF%BC%881%EF%BC%89%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89-toc" style="margin-left:40px;"><a href="#%EF%BC%881%EF%BC%89%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89" rel="nofollow">（1）字符数组的定义</a></p> <p id="%EF%BC%882%EF%BC%89%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96-toc" style="margin-left:40px;"><a href="#%EF%BC%882%EF%BC%89%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96" rel="nofollow">（2）字符数组的初始化</a></p> <p id="%E4%BA%8C%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2-toc" style="margin-left:0px;"><a href="#%E4%BA%8C%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2" rel="nofollow">二、字符串</a></p> <p id="%EF%BC%881%EF%BC%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%A6%82%E5%BF%B5-toc" style="margin-left:40px;"><a href="#%EF%BC%881%EF%BC%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%A6%82%E5%BF%B5" rel="nofollow">（1）字符串的概念</a></p> <p id="%EF%BC%882%EF%BC%89%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AD%97%E7%AC%A6%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84-toc" style="margin-left:40px;"><a href="#%EF%BC%882%EF%BC%89%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AD%97%E7%AC%A6%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84" rel="nofollow">（2）用字符串初始化字符字符数组</a></p> <p id="%EF%BC%883%EF%BC%89%E8%8E%B7%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6-toc" style="margin-left:40px;"><a href="#%EF%BC%883%EF%BC%89%E8%8E%B7%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6" rel="nofollow">（3）获取字符串的长度</a></p> <p id="%E4%B8%89%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%8C%87%E9%92%88-toc" style="margin-left:0px;"><a href="#%E4%B8%89%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%8C%87%E9%92%88" rel="nofollow">三、字符串与指针</a></p> <p id="%E5%9B%9B%E3%80%81%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%8C%87%E9%92%88-toc" style="margin-left:0px;"><a href="#%E5%9B%9B%E3%80%81%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%8C%87%E9%92%88" rel="nofollow">四、字符数组与字符指针</a></p> <hr id="hr-toc"/> </h1> <p>字符数组是存放字符数据的数组，每个元素都是单个字符。</p> <h2 id="%EF%BC%881%EF%BC%89%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89">（1）字符数组的定义</h2> <blockquote> <p>char 数组名[数组长度]；//一维字符数组</p> <p>char 数组名[常量表达式1][常量表达式2];//二维字符数组</p> </blockquote> <h2 id="%EF%BC%882%EF%BC%89%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96">（2）字符数组的初始化</h2> <p>在数组定义的同时对数组中的元素进行赋值，这个过程称为数组的初始化。</p> <blockquote> <p>例如：char ch[5]&nbsp;={'h','e','l','l','o'};//定义了一个包含5个元素的一维字符数组，数组名ch</p> </blockquote> <p><img decoding="async" alt="" height="78" src="http://img.555519.xyz/uploads3/20220722/f47dcb32cf63f9aba1bc04587c02f940.jpg"></p> <p>字符数组初始化注意事项：</p> <p>①元素个数不能大于字符数组长度</p> <p>②如果初始项值少于数组长度，则空余元素均会被赋值为'\0'&nbsp;.</p> <p>例如：char str[5]={'a','b','c'};</p> <p>str数组在内存中的表现为：</p> <p><img decoding="async" alt="" height="97" src="http://img.555519.xyz/uploads3/20220722/8fe961b0ae350359ee84053947b77e22.jpg"></p> <p>③如果没有指定数组大小，编译器会根据初始项的个数为数组分配长度</p> <p>char str[] ={'a','b','c'};//等价于char str[3]={'a','b','c'};</p> <hr/> </h1> <h2 id="%EF%BC%881%EF%BC%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%A6%82%E5%BF%B5">（1）字符串的概念</h2> <p><u><span style="color:#f33b45;"><strong>字符串</strong></span>是由字母、数字、下划线和空格等各种字符组成的一串字符，是一个<span style="color:#f33b45;"><strong>常量</strong></span></u>。由一对双引号括起来。</p> <p><span style="color:#f33b45;">字符串的末尾都默认有一个'\0'的结束符。</span></p> <blockquote> <p>"abcd"</p> <p>"&nbsp; &nbsp; &nbsp;"//这个也是字符串，里面的字符是空格</p> </blockquote> <p>通常<span style="color:#3399ea;">用字符数组的形式来存储和处理字符串，这种字符数组必须以空字符'\0'结尾</span>。</p> <p>当把一个字符串存入一个字符数组时，应把结束符'\0'存入数组。所以<span style="color:#f33b45;"><strong>字符数组的长度是字符串实际字符+1</strong></span></p> <p>例如：字符串“abcd”在数组中的存储表现为：</p> <p><img decoding="async" alt="" height="114" src="http://img.555519.xyz/uploads3/20220722/c9a3d9229f2ecabd47b3bb7257a996f9.jpg"></p> <h2 id="%EF%BC%882%EF%BC%89%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AD%97%E7%AC%A6%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84">（2）用字符串初始化字符字符数组</h2> <p>为了方便对字符数组进行初始化，可以直接使用一个字符串常量来为字符数组进行赋值。</p> <blockquote> <p>char str[6]={"hello"};</p> <p>char str[]=={"hello"};</p> <p>等价于</p> <p>char str[6]={'h','e','l','l','o','\0'};</p> </blockquote> <h2 id="%EF%BC%883%EF%BC%89%E8%8E%B7%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6">（3）获取字符串的长度</h2> <p>方法一：sizeof()运算符</p> <p>方法二：strlen()函数</p> <blockquote> <p>求字符串“abcd”的长度</p> <p>int str[]={"abcd"}</p> <p>int len1=sizeof(str)/sizeof(str[0);</p> <p>int len2=strlen(str);</p> <p>解析：结果len1=5;len2=4;</p> </blockquote> <p><strong>sizeof 和strlen总结</strong></p> <p><strong>①</strong>sizeof是<strong>运算符</strong>；strlen是<strong>库函数</strong>，包含在string.h头文件中</p> <p>②sizeof功能是获得<strong>所建立对象的字节大小</strong>；strlen函数是获得<strong>字符串</strong>所占内存的<strong>有效字节数</strong>；</p> <p>③sizeof运算符的<strong>参数可以是数组、指针、对象、函数等</strong>；strlen函数的<strong>参数必须是以'\0'结尾的字符串的指针</strong>；</p> <p>④sizeof运算符计算大小在<strong>编译时就完成</strong>，因此不能用来计算动态分配内存大小；strlen函数结果要在<strong>运行时</strong>才能计算出来。</p> <hr/> </h1> <p>字符型指针用char*定义，它不仅可以指向一个字符型常量，还可以指向一个字符串。</p> <blockquote> <p>char str[]="hello";</p> <p>char* ch=str;</p> </blockquote> <p>字符指针ch和字符串str的关系如下：</p> <p><img loading="lazy" decoding="async" alt="" height="181" src="http://img.555519.xyz/uploads3/20220722/bfbe4b61494a218546e2ee9064e06ec0.jpg"></p> <hr/> </h1> <p>字符串用字符数组来存储，也可以用数组地址取址赋值给字符型指针。</p> <p>字符数组和字符指针的区别和联系总结：</p> <p>（1）存储方式</p> <p>字符数组在用字符串初始化时，这个字符串就存放在字符数组开辟的内存空间中；</p> <p>字符指针变量在用字符串常量初始化时，指针变量中存储的是字符串的首地址，但字符串存储在常量区。</p> <blockquote> <p>实例分析：</p> <p>char str[6]="hello";</p> <p>char* p="hello";</p> </blockquote> <p>上面两行代码定义的变量在内存区的存储方式如下：</p> <p><img loading="lazy" decoding="async" alt="" height="280" src="http://img.555519.xyz/uploads3/20220722/cdf65a126aa1b09011909424b38eee3a.jpg"></p> <p>存储在栈区、堆区、静态区的数据是可更改的，存储在常量区的数据只能在定义时赋值，且一旦赋值就不能再改变。</p> <p>（2）初始化和赋值方式</p> <p>①初始化方式</p> <p>可对字符指针变量赋值，但不能对数组名赋值。</p> <blockquote> <p>char str[6]="hello";</p> <p>char* p="hello";</p> <p>/*等价于</p> <p>char *p;</p> <p>p="hello";</p> <p>*/</p> </blockquote> <p>②赋值方式</p> <p>使用数组定义的字符串只能通过为数组中的元素逐一赋值或通过调用复制函数的方式来赋值；</p> <p>使用指针定义的字符串还可以实现直接赋值</p> <blockquote> <p>char *p1="hello";</p> <p>char *p2=p1;</p> <p>char str1[6]="hello";</p> <p>char str2=str1;//错误写法</p> </blockquote> <p>（3）字符指针和数组名</p> <p>字符指针变量的值可以改变；</p> <p>数组名是一个指针常量，其值不能改变。</p> <p>（4）字符串中字符的引用</p> <p>可以用下标法和地址引用。</p> <blockquote> <p>char str[6]="hello";</p> <p>char ch1=str[2];</p> <p>char *p=str;</p> <p>char ch2=*(p+2);</p> </blockquote> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-81160.htm">springboot中spring.profiles.include的妙用</a></p>
+                                        <p>下一个：<a href="/news/article-81804.htm">猫死之后千万不可埋葬的说法（猫死了不可以土葬吗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-50506.htm" title="零宽断言正则表达式替换方案">零宽断言正则表达式替换方案</a></li>
+                        <li class="py-2"><a href="/news/article-66460.htm" title="Vue3实现跑马灯效果_vue.js">Vue3实现跑马灯效果_vue.js</a></li>
+                        <li class="py-2"><a href="/news/article-39537.htm" title="华中农业大学动物医院价目表（华中农业大学动物医院收费）">华中农业大学动物医院价目表（华中农业大学动物医院收费）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-free-high-speed-nodes.htm" title="「3月26日」最高速度22.8M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费订阅地址分享">「3月26日」最高速度22.8M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-55310.htm" title="在我所在的城市有一家宠物医院英文翻译（在我的城市有一家宠物医院翻译成英语）">在我所在的城市有一家宠物医院英文翻译（在我的城市有一家宠物医院翻译成英语）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-23-free-shadowrocket-node.htm" title="「2月23日」最高速度20.5M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费订阅地址分享">「2月23日」最高速度20.5M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-clash-v2ray-ss-ssr.htm" title="「1月21日」最高速度20.8M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费订阅地址分享">「1月21日」最高速度20.8M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-free-node-subscribe.htm" title="「2月17日」最高速度22.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费订阅地址分享">「2月17日」最高速度22.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-53667.htm" title="动物防疫方针是指什么内容（动物防疫实施办法）">动物防疫方针是指什么内容（动物防疫实施办法）</a></li>
+                        <li class="py-2"><a href="/news/article-81803.htm" title="C语言字符串、字符数组、字符指针">C语言字符串、字符数组、字符指针</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

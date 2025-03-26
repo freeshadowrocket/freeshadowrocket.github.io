@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-81160.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>springboot中spring.profiles.include的妙用</title>
+        <meta name="description" content="我们有这样的一个springboot项目。项目分为开发、测试、生产三个不同阶段(环境)，每个阶段都会有db、ftp、redis等的不同配置信息。我们可以使用spring.profiles.includ" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-81160.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="springboot中spring.profiles.include的妙用" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/867688ce77bb640f32e1e42dfabf935a.webp" />
+        <meta property="og:release_date" content="2025-03-25T08:19:05" />
+    <meta property="og:updated_time" content="2025-03-25T08:19:05" />
+        <meta property="og:description" content="我们有这样的一个springboot项目。项目分为开发、测试、生产三个不同阶段(环境)，每个阶段都会有db、ftp、redis等的不同配置信息。我们可以使用spring.profiles.includ" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot中spring.profiles.include的妙用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>springboot中spring.profiles.include的妙用</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>我们有这样的一个springboot项目。项目分为开发、测试、生产三个不同阶段(环境)，每个阶段都会有db、ftp、redis等的不同配置信息。我们可以使用spring.profiles.include来实现三种不同环境的一键切换。</p> <p>项目总(入口)配置文件：</p> <blockquote> <p>bootstrap.yml&nbsp; ，内容如下</p> <p>spring.profiles.active:&nbsp; dev&nbsp; #dev、test、prod 三种配置可以在这里进行一键切换，默认激活 dev(开发)环境配置</p> </blockquote> <p>项目开发环境配置文件：</p> <blockquote> <p>application-dev.yml (开发环境入口配置)、application-devDb.yml 、application-devFtp.yml、application-devRedis.yml&nbsp;</p> <p>application-dev.yml&nbsp;中含有如下内容</p> <p>spring.profiles.include: devDb,devFtp,devRedis</p> </blockquote> <p>项目测试环境配置文件：</p> <blockquote> <p>application-test.yml (测试环境入口配置)、application-testDb.yml 、application-testFtp.yml、application-testRedis.yml&nbsp;</p> <p>application-test.yml&nbsp;中含有如下内容</p> <p>spring.profiles.include:&nbsp;testDb,testFtp,testRedis</p> </blockquote> <p>项目生产环境配置文件：</p> <blockquote> <p>application-prod.yml (生产环境入口配置)、application-prodDb.yml 、application-prodFtp.yml、application-prodRedis.yml&nbsp;</p> <p>application-prod.yml&nbsp;中含有如下内容</p> <p>spring.profiles.include:&nbsp;prodDb,prodFtp,prodRedis</p> </blockquote> <p>spring.profiles.include&nbsp;的作用是可以叠加激活新的profile&nbsp;，这样可以在总的项目配置(bootstrap.yml)中实现一键切换dev、test、prod三者不同环境, 即&nbsp;</p> <p>切换为dev时，同时激活了dev、devDb、devFtp、devRedis&nbsp;的profile</p> <p>切换为test时，同时激活了test、testDb、testFtp、testRedis&nbsp;的profile</p> <p>切换为prod时，同时激活了prod、prodDb、prodFtp、prodRedis&nbsp;的profile</p> <p>另外：&nbsp;在yml配置文件中配置List&lt;String&gt;&nbsp;的值，可以采用&nbsp; -子项&nbsp;的方式，如 ：</p> <p>spring.profiles.include:</p> <p>&nbsp; -&nbsp;子项1</p> <p>&nbsp; -&nbsp;子项2</p> <p>&nbsp; -&nbsp;子项3&nbsp; &nbsp;</p> <p>也可以采用&nbsp;逗号分隔元素列表的方式，如：&nbsp;</p> <p>spring.profiles.include:&nbsp;子项1,子项2,子项3&nbsp; &nbsp;&nbsp;</p> <hr/> <p><strong>通过一个测试了解：spring.profiles.active和spring.profiles.include的区别</strong></p> <blockquote> <p>源引自：https://blog.csdn.net/happyblueice/article/details/86538843</p> <p>application.properties文件内容</p> <pre>spring.profiles.active=test4 pring.profiles.include=test3,test5 version=1 name=Tom</pre> <p>application-test2.properties文件内容</p> <pre>pring.profiles.include=test3,test4 version=2</pre> <p>application-test3.properties文件内容</p> <pre>version=3 name=Allen</pre> <p>application-test4.properties文件内容</p> <pre>name=Jim</pre> <p>application-test5.properties</p> <pre>version=5 name=Ifty</pre> <pre>无参启动例如  java -jar example.jar  先加载application.properties文件 最终version=5,name=Jim  有参启动例如 java -jar example.jar --spring.profiles.active=test2 先加载application-test2.properties文件，再加载application.properties文件 最终version=2,name=Ifty  总结： 多个配置文件中有同一个值，以下情况获取值的效果： 1.启动命令不带--spring.profiles.active参数以application.properties首先启动 按顺序所有文件第一个配置的spring.profiles.active属性中指定的最后一个文件中含有该属性的值为准 如果所有文件都没有spring.profiles.active，那么以pring.profiles.include配置的最后一个属性文件中的值为准 2.启动命令带--spring.profiles.active参数以参数指定的属性文件首先启动 此情况，已命令指定的配置文件中的值为准，其他文件中再配置spring.profiles.active也不会生效，如果不存在值，那么会以pring.profiles.include指定的最后一个文件中的值为准  简要说 启动命令spring.profiles.active指定文件中的值 &gt; 文件中spring.profiles.active指定的文件列表中最后一次出现的值 &gt; 文件中spring.profiles.include指定的文件列表中最后一次出现的值  （注意：无论是否配置启动命令参数指定文件，最后都会加载application.properties，它里边配置的信息也很关键）</pre> </blockquote></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-81159.htm">@Transactional 详解</a></p>
+                                        <p>下一个：<a href="/news/article-81803.htm">C语言字符串、字符数组、字符指针</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-14-shadowrocket-node.htm" title="「2月14日」最高速度21.2M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费订阅地址分享">「2月14日」最高速度21.2M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-35574.htm" title="同安宠物 同安宠物店">同安宠物 同安宠物店</a></li>
+                        <li class="py-2"><a href="/news/article-52082.htm" title="动物医院社会实践内容 动物医院社会实践内容怎么写">动物医院社会实践内容 动物医院社会实践内容怎么写</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-node-subscribe-links.htm" title="「2月22日」最高速度19.5M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费订阅地址分享">「2月22日」最高速度19.5M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-shadowrocket-node.htm" title="「3月7日」最高速度18.2M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费订阅地址分享">「3月7日」最高速度18.2M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-47959.htm" title="Springboot连接MySQL数据库">Springboot连接MySQL数据库</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-free-high-speed-nodes.htm" title="「3月26日」最高速度22.8M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费订阅地址分享">「3月26日」最高速度22.8M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-81159.htm" title="@Transactional 详解">@Transactional 详解</a></li>
+                        <li class="py-2"><a href="/news/article-37567.htm" title="华中农业大学动物医院价目表（华中农业大学动物医院收费）">华中农业大学动物医院价目表（华中农业大学动物医院收费）</a></li>
+                        <li class="py-2"><a href="/news/article-55878.htm" title="养猫的属相禁忌（养猫最忌讳属相）">养猫的属相禁忌（养猫最忌讳属相）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
