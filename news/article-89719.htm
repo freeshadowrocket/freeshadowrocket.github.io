@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-89719.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>小程序进阶-如何去除或隐藏页面滚动条</title>
+        <meta name="description" content="前言   当小程序页面展示内容超过屏幕高度或宽度，我们想要看到全部内容，这时候就必须用到页面滚动。可是，我们发现滚动页面的滚动条特别的突兀和丑陋，而且参考大部分的小程序都是将滚动条去掉了。那么，我们该" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-89719.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="小程序进阶-如何去除或隐藏页面滚动条" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/d7a90843e4eb3975913e5c72000be941.webp" />
+        <meta property="og:release_date" content="2025-04-06T10:08:13" />
+    <meta property="og:updated_time" content="2025-04-06T10:08:13" />
+        <meta property="og:description" content="前言   当小程序页面展示内容超过屏幕高度或宽度，我们想要看到全部内容，这时候就必须用到页面滚动。可是，我们发现滚动页面的滚动条特别的突兀和丑陋，而且参考大部分的小程序都是将滚动条去掉了。那么，我们该" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="小程序进阶-如何去除或隐藏页面滚动条">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>小程序进阶-如何去除或隐藏页面滚动条</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="_0" rel="nofollow"></a>前言</h2> <p>  当小程序页面展示内容超过屏幕高度或宽度，我们想要看到全部内容，这时候就必须用到页面滚动。可是，我们发现滚动页面的滚动条特别的突兀和丑陋，而且参考大部分的小程序都是将滚动条去掉了。那么，我们该怎么去掉滚动条呢？</p> <h2><a id="_3" rel="nofollow"></a>方案一</h2> <p>  我们知道，当展示内容超过页面高度，会触发page默认的滚动条。如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/3ea57b0d01e07d4d8aca80e4d84ac5dd.jpg" alt="小程序进阶-如何去除或隐藏页面滚动条"><br /> 在小程序社区，我找到了一个方案：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/150729ce3cd6b3f5ac222bc647a066b9.jpg" alt="小程序进阶-如何去除或隐藏页面滚动条"><br /> 看代码：<br /> index.wxss</p> <pre><code class="prism language-wxss">.intro{   width: 100vw;   height: 100vh;   overflow: hidden;   margin: auto; } .sub{   height: 100%;   width: calc(100vw + 6px);   overflow-x: hidden; }</code></pre> <p>index.wxml</p> <pre><code class="prism language-wxml">&lt;view class="intro"&gt; 	&lt;view class="sub"&gt; 		页面内容 	&lt;/view&gt; &lt;/view&gt;</code></pre> <p>简而言之，就是将滚动条很好的隐藏起来了！！！！！</p> <h2><a id="_33" rel="nofollow"></a>方案二</h2> <p>当然我们更多使用的应该是scroll-view，隐藏滚动条的方法也很简单。<br /> 我们可以在app.wxss（全局）或当前页面.wxss加入如下代码即可：</p> <pre><code class="prism language-wxss">::-webkit-scrollbar {   display: none;   width: 0;   height: 0;   color: transparent; }</code></pre> <p>值得注意的是：</p> <pre><code class="prism language-php"><span class="token operator">&lt;</span>scroll<span class="token operator">-</span>view   scroll<span class="token operator">-</span>y style<span class="token operator">=</span><span class="token string double-quoted-string">"width: 100%; height: 100%;"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>scroll<span class="token operator">-</span>view<span class="token operator">&gt;</span></code></pre> <p>scroll-view高度不要设置为相对高度，如100%。否则，page页面的滚动条又会出现了！！！<br /> 我们可以这样做：</p> <pre><code class="prism language-php"><span class="token operator">&lt;</span>scroll<span class="token operator">-</span>view   scroll<span class="token operator">-</span>y style<span class="token operator">=</span><span class="token string double-quoted-string">"width: 100%; height: 100vh;"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>scroll<span class="token operator">-</span>view<span class="token operator">&gt;</span></code></pre> <p>如果仍然无效，减少height的值，例如设为height:99vh。scroll-view高度大于page高度仍会出现滚动条的。<br /> 父元素如page记得设置：</p> <pre><code class="prism language-*">overflow: hidden;</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89006.htm">中国兽药公司前十名 中国兽药公司前十名排名</a></p>
+                                        <p>下一个：<a href="/news/article-89720.htm">优雅高效的Mac环境配置教程：从零开始八步走</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-73637.htm" title="动物医院营业执照要求 动物医院营业执照要求是什么">动物医院营业执照要求 动物医院营业执照要求是什么</a></li>
+                        <li class="py-2"><a href="/news/article-68376.htm" title="开一家动物医院需要多久才能开（开一个动物医院需要多少钱）">开一家动物医院需要多久才能开（开一个动物医院需要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-84663.htm" title="女生钱包什么牌子好用(女生钱包什么牌子好看)">女生钱包什么牌子好用(女生钱包什么牌子好看)</a></li>
+                        <li class="py-2"><a href="/news/article-79063.htm" title="Bootstrap Blazor 组件库 Row 布局组件（栅格系统）">Bootstrap Blazor 组件库 Row 布局组件（栅格系统）</a></li>
+                        <li class="py-2"><a href="/news/article-79761.htm" title="宠物店的宠物从哪进货便宜（宠物店都是在哪里进货）">宠物店的宠物从哪进货便宜（宠物店都是在哪里进货）</a></li>
+                        <li class="py-2"><a href="/news/article-81804.htm" title="猫死之后千万不可埋葬的说法（猫死了不可以土葬吗）">猫死之后千万不可埋葬的说法（猫死了不可以土葬吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-free-node-subscribe.htm" title="「3月16日」最高速度22.1M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费订阅地址分享">「3月16日」最高速度22.1M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-89719.htm" title="小程序进阶-如何去除或隐藏页面滚动条">小程序进阶-如何去除或隐藏页面滚动条</a></li>
+                        <li class="py-2"><a href="/news/article-71001.htm" title="YARN线上动态资源调优">YARN线上动态资源调优</a></li>
+                        <li class="py-2"><a href="/news/article-85390.htm" title="做猫粮的机器（做猫粮的机器多少钱）">做猫粮的机器（做猫粮的机器多少钱）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
