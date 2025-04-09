@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-90892.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>os模块，os.walk()方法解释与使用</title>
+        <meta name="description" content="os.walk方法，主要是用来遍历一个目录内各个子目录和子文件。 python的定义格式如下： def walk(top, topdown=True, onerror=None, followlink" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-90892.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="os模块，os.walk()方法解释与使用" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/a56502512b8aa2a101f21c552eba3153.webp" />
+        <meta property="og:release_date" content="2025-04-08T09:52:06" />
+    <meta property="og:updated_time" content="2025-04-08T09:52:06" />
+        <meta property="og:description" content="os.walk方法，主要是用来遍历一个目录内各个子目录和子文件。 python的定义格式如下： def walk(top, topdown=True, onerror=None, followlink" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="os模块，os.walk()方法解释与使用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>os模块，os.walk()方法解释与使用</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>os.walk方法，主要是用来遍历一个目录内各个子目录和子文件。</strong></p> <p>python的定义格式如下：</p> <pre><code class="prism language-python"><span class="token keyword">def</span> <span class="token function">walk</span><span class="token punctuation">(</span>top<span class="token punctuation">,</span> topdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> onerror<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> followlinks<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span> </code></pre> <p>top参数，是要遍历的目录。<br /> topdown参数，为True的时候，优先遍历top目录。<br /><strong>剩下两个函数我也没搞懂。。。。</strong></p> <p>示例，目录结构如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/740cda448de60986ab315851e52c4ccf.jpg" alt="os模块，os.walk()方法解释与使用"><br /> 代码如下：</p> <pre><code class="prism language-python"><span class="token keyword">import</span> os  path <span class="token operator">=</span> <span class="token string">'/cx/pyfolder/testfolder/'</span> file_loc <span class="token operator">=</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token keyword">for</span> path<span class="token punctuation">,</span> <span class="token builtin">dir</span><span class="token punctuation">,</span> <span class="token builtin">file</span> <span class="token keyword">in</span> file_loc<span class="token punctuation">:</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"遍历一次：\n"</span><span class="token operator">+</span><span class="token string">"path是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"dir是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"file是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p>运行之后，输出结果为：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/ea4f60db6c68e17f488285520175a534.jpg" alt="os模块，os.walk()方法解释与使用"><br /> 可以看到，第一次遍历的是传入的path路径，就是testfolder这个文件夹，并返回了testfolder路径、testfolder下的子文件夹列表、testfolder下的文件列表，第二次遍历的是“1”这个给文件夹，并返回了“1”下面的文件夹列表和文件列表，第第三遍遍历的是“2”这个文件夹，并返回了路径、子文件夹列表，因为没有所以返回为空，文件列表。</p> <p>下面把topdown这个参数传值为False:</p> <pre><code class="prism language-python"><span class="token keyword">import</span> os  path <span class="token operator">=</span> <span class="token string">'/cx/pyfolder/testfolder/'</span> file_loc <span class="token operator">=</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>path<span class="token punctuation">,</span>topdown<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token keyword">for</span> path<span class="token punctuation">,</span> <span class="token builtin">dir</span><span class="token punctuation">,</span> <span class="token builtin">file</span> <span class="token keyword">in</span> file_loc<span class="token punctuation">:</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"遍历一次：\n"</span><span class="token operator">+</span><span class="token string">"path是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"dir是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"file是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p>打印结果：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/ec68ca07c89019864f7143d0834e4c69.jpg" alt="os模块，os.walk()方法解释与使用"><br /> 可以发现，优先遍历的是“2”这个文件夹，最后才遍历“testfolder”这个文件夹。</p> <p>如果想获取各个文件夹下文件的路径，可以这样：</p> <pre><code class="prism language-python"><span class="token keyword">import</span> os  path <span class="token operator">=</span> <span class="token string">'/cx/pyfolder/testfolder/'</span> file_loc <span class="token operator">=</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>path<span class="token punctuation">)</span> file_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">for</span> path<span class="token punctuation">,</span> <span class="token builtin">dir</span><span class="token punctuation">,</span> <span class="token builtin">file</span> <span class="token keyword">in</span> file_loc<span class="token punctuation">:</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"遍历一次：\n"</span><span class="token operator">+</span><span class="token string">"path是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"dir是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"file是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token keyword">for</span> f <span class="token keyword">in</span> <span class="token builtin">file</span><span class="token punctuation">:</span>         file_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>path<span class="token punctuation">,</span> f<span class="token punctuation">)</span>  <span class="token comment">#  拼接路径和文件名称</span>          file_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>file_list<span class="token punctuation">)</span> </code></pre> <p>要获取指定后缀名的文件：</p> <pre><code class="prism language-python"><span class="token keyword">import</span> os  path <span class="token operator">=</span> <span class="token string">'/cx/pyfolder/testfolder/'</span> file_loc <span class="token operator">=</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>path<span class="token punctuation">)</span> file_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">for</span> path<span class="token punctuation">,</span> <span class="token builtin">dir</span><span class="token punctuation">,</span> <span class="token builtin">file</span> <span class="token keyword">in</span> file_loc<span class="token punctuation">:</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"遍历一次：\n"</span><span class="token operator">+</span><span class="token string">"path是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"dir是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">dir</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"file是：{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token keyword">for</span> f <span class="token keyword">in</span> <span class="token builtin">file</span><span class="token punctuation">:</span>         <span class="token keyword">if</span> f<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">".txt"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 判断是否以.txt结尾</span>             file_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>f<span class="token punctuation">)</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>file_list<span class="token punctuation">)</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-90464.htm">兽用疫苗查询 兽用疫苗查询网站</a></p>
+                                        <p>下一个：<a href="/news/article-90893.htm">动物疫苗空瓶无害化处理方案（动物疫苗空瓶无害化处理方案怎么写）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-node-subscribe-links.htm" title="「3月22日」最高速度20.7M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费订阅地址分享">「3月22日」最高速度20.7M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-71645.htm" title="动物疫苗什么时候打（动物疫苗什么时候打合适）">动物疫苗什么时候打（动物疫苗什么时候打合适）</a></li>
+                        <li class="py-2"><a href="/news/article-66461.htm" title="猫三联打几针多少钱（猫三联打三针还是两针）">猫三联打几针多少钱（猫三联打三针还是两针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="「3月20日」最高速度19.8M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费订阅地址分享">「3月20日」最高速度19.8M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-shadowrocket-node.htm" title="「3月8日」最高速度22.5M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费订阅地址分享">「3月8日」最高速度22.5M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-67095.htm" title="动物疫苗证明哪里开的啊（动物疫苗证去哪里办怎么办）">动物疫苗证明哪里开的啊（动物疫苗证去哪里办怎么办）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-free-node-subscribe-links.htm" title="「3月13日」最高速度18.2M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费订阅地址分享">「3月13日」最高速度18.2M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-clash-v2ray-ss-ssr.htm" title="「3月14日」最高速度22M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费订阅地址分享">「3月14日」最高速度22M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-node-share.htm" title="「3月21日」最高速度19.5M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费订阅地址分享">「3月21日」最高速度19.5M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-83949.htm" title="孕妇让猫咪抓伤有一点血（怀孕让猫挠了出血了没有事吧）">孕妇让猫咪抓伤有一点血（怀孕让猫挠了出血了没有事吧）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
