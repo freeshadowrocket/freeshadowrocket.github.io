@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-95725.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Promise和async/await的区别</title>
+        <meta name="description" content="【JavaScript】Promise和async/await的区别  Promise async/await async/await 比 Promise 更省内存？ 总结    Promise 是一" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-95725.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="Promise和async/await的区别" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/c5b25e1b2ebc63c87452a3c07061e703.webp" />
+        <meta property="og:release_date" content="2025-04-14T08:03:17" />
+    <meta property="og:updated_time" content="2025-04-14T08:03:17" />
+        <meta property="og:description" content="【JavaScript】Promise和async/await的区别  Promise async/await async/await 比 Promise 更省内存？ 总结    Promise 是一" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Promise和async/await的区别">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>Promise和async/await的区别</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>【JavaScript】Promise和async/await的区别</h3> <ul> <li><a href="#Promise_2" rel="nofollow">Promise</a></li> <li><a href="#asyncawait_5" rel="nofollow">async/await</a></li> <li><a href="#asyncawait__Promise__17" rel="nofollow">async/await 比 Promise 更省内存？</a></li> <li><a href="#_21" rel="nofollow">总结</a></li> </ul> </div> </h1> <p><code>Promise</code> 是一种异步编程机制，为异步代码提供了清晰的抽象。解决了代码越来越复杂，回调策略可扩展性越来越差的问题。</p> </h1> <p><code>async/await</code> 是ES8的关键字，是异步函数，将<code>Promise</code> 应用于<code>JavaScript</code> 函数的结果，让同步方式写的代码能异步执行。<br /> 旨在解决利用异步结构组织代码的问题。</p> <p><code>async</code> 关键字用于声明异步函数，且异步函数始终返回<code>Promise</code> 对象，如果异步函数使用<code>return</code> 关键字，则异步函数的返回值会被<code>Promise.resolve()</code> 包装成一个<code>Promise</code> 对象。</p> <p><code>await</code> 关键字会暂停执行异步函数后面的代码，<code>JavaScript</code> 运行时记录暂停执行的位置并让出执行线程，等到<code>await</code> 右边的值可用时，<code>JavaScript</code> 运行时会向消息队列中推送一个任务，这个任务会恢复异步函数的执行。</p> <p><code>await</code> 关键字必须在异步函数中使用，且只能直接出现在异步函数的定义中。</p> <p>在<code>async/await</code> 关键字中，<code>async</code> 仅仅是一个标识符，起作用的是<code>await</code> 关键字，如果异步函数不包含<code>await</code> 关键字，基本上跟普通函数一样。</p> </h1> <p><code>JavaScript</code> 引擎在创建<code>Promise</code> 时会尽可能的保留完整的调用栈。在抛出错误时，调用栈由运行时错误处理逻辑获取，并出现在栈追踪信息中。而栈追踪信息会占用内存，有一些计算和存储成本。<br /> 当使用<code>async/await</code> 时，栈追踪信息不会记录await后抛出的错误，因为异步函数内部嵌套函数中存储着指向包含函数的指针，故栈追踪信息不会带来额外的消耗。所以，<code>async/await</code> 更省内存。</p> </h1> <ul> <li><code>Promise</code> 的主要功能是为异步代码提供了清晰的抽象。</li> <li>异步函数是将<code>Promise</code> 应用于<code>JavaScript</code> 函数的结果。异步函数可以暂停执行，而不阻塞主线程。</li> <li>推荐使用<code>await/async</code>。</li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-94977.htm">深圳宠物领养中心 免费政策 深圳宠物领养中心 免费政策最新</a></p>
+                                        <p>下一个：<a href="/news/article-95726.htm">学兽医去哪里学比较好（兽医证可以自考自学吗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-84664.htm" title="电动螺丝刀什么牌子好用(直柄电动螺丝刀什么牌子好)">电动螺丝刀什么牌子好用(直柄电动螺丝刀什么牌子好)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="「3月20日」最高速度19.8M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费订阅地址分享">「3月20日」最高速度19.8M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-93435.htm" title="宠物食品厂需要投资多少钱（宠物食品工厂需要办理哪些证件）">宠物食品厂需要投资多少钱（宠物食品工厂需要办理哪些证件）</a></li>
+                        <li class="py-2"><a href="/news/article-96452.htm" title="宠物领养项目背景怎么写文案（宠物领养活动方案）">宠物领养项目背景怎么写文案（宠物领养活动方案）</a></li>
+                        <li class="py-2"><a href="/news/article-86816.htm" title="太原免费领养宠物的网站叫什么（太原宠物领养太原宠物赠送）">太原免费领养宠物的网站叫什么（太原宠物领养太原宠物赠送）</a></li>
+                        <li class="py-2"><a href="/news/article-74304.htm" title="合肥有宠物领养中心吗（合肥有宠物领养中心吗现在）">合肥有宠物领养中心吗（合肥有宠物领养中心吗现在）</a></li>
+                        <li class="py-2"><a href="/news/article-67095.htm" title="动物疫苗证明哪里开的啊（动物疫苗证去哪里办怎么办）">动物疫苗证明哪里开的啊（动物疫苗证去哪里办怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-95725.htm" title="Promise和async/await的区别">Promise和async/await的区别</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-node-share.htm" title="「4月3日」最高速度20.6M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费订阅地址分享">「4月3日」最高速度20.6M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-free-node-subscribe.htm" title="「3月16日」最高速度22.1M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费订阅地址分享">「3月16日」最高速度22.1M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费订阅地址分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
