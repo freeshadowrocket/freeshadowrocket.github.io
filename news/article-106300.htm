@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freeshadowrocket.github.io/news/article-106300.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>vue3.0下如何使用mapState，mapGetters和mapActions</title>
+        <meta name="description" content="vue3.0下如何使用mapState，mapGetters和mapActions      1、新建useMapper.js 2、新建useState.js 3、新建useGetters.js 4、" />
+        <link rel="icon" href="/assets/website/img/freeshadowrocket/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeShadowrocket免费机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freeshadowrocket.github.io/news/article-106300.htm" />
+    <meta property="og:site_name" content="FreeShadowrocket免费机场官网" />
+    <meta property="og:title" content="vue3.0下如何使用mapState，mapGetters和mapActions" />
+    <meta property="og:image" content="https://freeshadowrocket.github.io/uploads/20240808/08dfe757e4334b8938bc05571932ec01.webp" />
+        <meta property="og:release_date" content="2025-04-28T09:45:19" />
+    <meta property="og:updated_time" content="2025-04-28T09:45:19" />
+        <meta property="og:description" content="vue3.0下如何使用mapState，mapGetters和mapActions      1、新建useMapper.js 2、新建useState.js 3、新建useGetters.js 4、" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue3.0下如何使用mapState，mapGetters和mapActions">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/freeshadowrocket/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/freeshadowrocket/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M2D9T3E49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8M2D9T3E49');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+            <a href="/">
+                        <span class="logo me-auto">Free Shadowrocket</span>
+                        </a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/assets/website/img/freeshadowrocket/logo.png" alt="" class="img-fluid"></a>-->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                                        <li><a class="nav-link" href="/">首页</a></li>
+                                        <li><a class="nav-link" href="/free-nodes/">免费节点</a></li>
+                                        <li><a class="nav-link" href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a class="nav-link" href="/client.htm">客户端</a></li>
+                                        <li><a class="nav-link" href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>正文</li>
+                </ol>
+                <h1>vue3.0下如何使用mapState，mapGetters和mapActions</h1>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>vue3.0下如何使用mapState，mapGetters和mapActions</h3> <ul> <li> <ul> <li> <ul> <li>1、新建useMapper.js</li> <li>2、新建useState.js</li> <li>3、新建useGetters.js</li> <li>4、新建useActions.js</li> <li>5、页面中使用</li> </ul> </li> </ul> </li> </ul> </div> <p> vue2.0中使用mapState及mapActions的方式</p> <pre><code class="prism language-javascript"><span class="token comment">// 使用mapState</span> computed<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token comment">//...</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>  methods<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'fnA'</span><span class="token punctuation">,</span><span class="token string">'fnB'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> <p>vue3.0中获取state和使用actions的方式</p> <pre><code class="prism language-javascript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>computed<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vue'</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>useStore<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vuex'</span><span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> stateA<span class="token operator">=</span><span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>stateA<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> stateB<span class="token operator">=</span><span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>stateB<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> methodA<span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'methodA'</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span>name<span class="token operator">:</span><span class="token string">'张三'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>那如何才能在vue3下使用mapState这些api呢？</p> <p>答案是封装mapState，mapGetters，mapActions方法。</p> <h3>1、新建useMapper.js</h3> <pre><code class="prism language-javascript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> useStore<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vuex'</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> computed<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vue'</span><span class="token keyword">export</span><span class="token keyword">function</span><span class="token function">useStateMapper</span><span class="token punctuation">(</span><span class="token parameter">mapper<span class="token punctuation">,</span> mapFn</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> storeStateFns<span class="token operator">=</span><span class="token function">mapFn</span><span class="token punctuation">(</span>mapper<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> storeState<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">;</span>     Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>storeStateFns<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fnKey</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token comment">// vuex源码中mapState和mapGetters的方法中使用的是this.$store,所以更改this绑定</span><span class="token keyword">const</span> fn<span class="token operator">=</span> storeStateFns<span class="token punctuation">[</span>fnKey<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span> $store<span class="token operator">:</span> store<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         storeState<span class="token punctuation">[</span>fnKey<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">computed</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">return</span> storeState<span class="token punctuation">}</span><span class="token keyword">export</span><span class="token keyword">function</span><span class="token function">useActionMapper</span><span class="token punctuation">(</span><span class="token parameter">mapper<span class="token punctuation">,</span> mapFn</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> storeActionsFns<span class="token operator">=</span><span class="token function">mapFn</span><span class="token punctuation">(</span>mapper<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> storeAction<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">;</span>      Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>storeActionsFns<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fnKey</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>         storeAction<span class="token punctuation">[</span>fnKey<span class="token punctuation">]</span><span class="token operator">=</span> storeActionsFns<span class="token punctuation">[</span>fnKey<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span> $store<span class="token operator">:</span> store<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">return</span> storeAction<span class="token punctuation">}</span></code></pre> <h3>2、新建useState.js</h3> <pre><code class="prism language-javascript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> mapState<span class="token punctuation">,</span> createNamespacedHelpers<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vuex'</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> useStateMapper<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'./useMapper'</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>checkType<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'./index'</span><span class="token comment">/**  *   * @param {*} moduleName 模块名称  * @param {*} mapper state属性集合 ['name', 'age']  * @returns   */</span><span class="token keyword">export</span><span class="token keyword">function</span><span class="token function">useState</span><span class="token punctuation">(</span><span class="token parameter">moduleName<span class="token punctuation">,</span> mapper</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mapperFn<span class="token operator">=</span> mapState<span class="token punctuation">;</span><span class="token comment">// 如果使用模块化，则使用vuex提供的createNamespacedHelpers方法找到对应模块的mapState方法</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">checkType</span><span class="token punctuation">(</span>moduleName<span class="token punctuation">)</span><span class="token operator">===</span><span class="token string">"[object String]"</span><span class="token operator">&amp;&amp;</span> moduleName<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         mapperFn<span class="token operator">=</span><span class="token function">createNamespacedHelpers</span><span class="token punctuation">(</span>moduleName<span class="token punctuation">)</span><span class="token punctuation">.</span>mapState<span class="token punctuation">}</span><span class="token keyword">return</span><span class="token function">useStateMapper</span><span class="token punctuation">(</span>mapper<span class="token punctuation">,</span> mapperFn<span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> <h3>3、新建useGetters.js</h3> <pre><code class="prism language-javascript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> mapGetters<span class="token punctuation">,</span> createNamespacedHelpers<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vuex'</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> useStateMapper<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'./useMapper'</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>checkType<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'./index'</span><span class="token comment">/**  *   * @param {*} moduleName 模块名称  * @param {*} mapper getters属性集合 ['name', 'age']  * @returns   */</span><span class="token keyword">export</span><span class="token keyword">function</span><span class="token function">useGetters</span><span class="token punctuation">(</span><span class="token parameter">moduleName<span class="token punctuation">,</span> mapper</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mapperFn<span class="token operator">=</span> mapGetters<span class="token punctuation">;</span><span class="token comment">// 如果使用模块化，则使用vuex提供的createNamespacedHelpers方法找到对应模块的mapGetters方法</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">checkType</span><span class="token punctuation">(</span>moduleName<span class="token punctuation">)</span><span class="token operator">===</span><span class="token string">"[object String]"</span><span class="token operator">&amp;&amp;</span> moduleName<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         mapperFn<span class="token operator">=</span><span class="token function">createNamespacedHelpers</span><span class="token punctuation">(</span>moduleName<span class="token punctuation">)</span><span class="token punctuation">.</span>mapGetters<span class="token punctuation">}</span><span class="token keyword">return</span><span class="token function">useStateMapper</span><span class="token punctuation">(</span>mapper<span class="token punctuation">,</span> mapperFn<span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> <h3>4、新建useActions.js</h3> <pre><code class="prism language-javascript"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span> mapActions<span class="token punctuation">,</span> createNamespacedHelpers<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'vuex'</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>useActionMapper<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'./useMapper'</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>checkType<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'./index'</span><span class="token comment">/**  *   * @param {*} moduleName 模块名称  * @param {*} mapper 方法名集合 ['fn1', 'fn2']  * @returns   */</span><span class="token keyword">export</span><span class="token keyword">function</span><span class="token function">useActions</span><span class="token punctuation">(</span><span class="token parameter">moduleName<span class="token punctuation">,</span> mapper</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mapperFn<span class="token operator">=</span> mapActions<span class="token punctuation">;</span><span class="token comment">// 如果使用模块化，则使用vuex提供的createNamespacedHelpers方法找到对应模块的mapActions方法</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">checkType</span><span class="token punctuation">(</span>moduleName<span class="token punctuation">)</span><span class="token operator">===</span><span class="token string">"[object String]"</span><span class="token operator">&amp;&amp;</span> moduleName<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         mapperFn<span class="token operator">=</span><span class="token function">createNamespacedHelpers</span><span class="token punctuation">(</span>moduleName<span class="token punctuation">)</span><span class="token punctuation">.</span>mapActions<span class="token punctuation">}</span><span class="token keyword">return</span><span class="token function">useActionMapper</span><span class="token punctuation">(</span>mapper<span class="token punctuation">,</span> mapperFn<span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> <h3>5、页面中使用</h3> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>div<span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"home"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>姓名：<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>name<span class="token punctuation">}</span><span class="token punctuation">}</span> 年龄：<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>age<span class="token punctuation">}</span><span class="token punctuation">}</span> 性别：<span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>sex<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span><span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"changeName"</span><span class="token operator">&gt;</span>改名<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token comment">// @ is an alias to /src</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>useState<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'@/utils/useState'</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>useActions<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">'@/utils/useAction'</span><span class="token keyword">export</span><span class="token keyword">default</span><span class="token punctuation">{<!-- --></span>     name<span class="token operator">:</span><span class="token string">"home"</span><span class="token punctuation">,</span><span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> storeState<span class="token operator">=</span><span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">,</span><span class="token string">'sex'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token keyword">const</span> storeActions<span class="token operator">=</span><span class="token function">useActions</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'setName'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token keyword">const</span><span class="token function-variable function">changeName</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>             storeAction<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">'李四'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token keyword">return</span><span class="token punctuation">{<!-- --></span>             changeName<span class="token punctuation">,</span><span class="token operator">...</span>storeState<span class="token punctuation">,</span><span class="token operator">...</span>storeActions<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-105478.htm">@DateTimeFormat和@JsonFormat使用</a></p>
+                                        <p>下一个：<a href="/news/article-106301.htm">宠物领养协议上可以写禁止弃养嘛为什么不能写 违背宠物领养协议</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-25-free-high-speed-nodes.htm" title="「4月25日」最高速度21.9M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费订阅地址分享">「4月25日」最高速度21.9M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-86817.htm" title="兽用疫苗可以网上销售吗（兽用疫苗可以网上销售吗知乎）">兽用疫苗可以网上销售吗（兽用疫苗可以网上销售吗知乎）</a></li>
+                        <li class="py-2"><a href="/news/article-74304.htm" title="合肥有宠物领养中心吗（合肥有宠物领养中心吗现在）">合肥有宠物领养中心吗（合肥有宠物领养中心吗现在）</a></li>
+                        <li class="py-2"><a href="/news/article-68376.htm" title="开一家动物医院需要多久才能开（开一个动物医院需要多少钱）">开一家动物医院需要多久才能开（开一个动物医院需要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-90464.htm" title="兽用疫苗查询 兽用疫苗查询网站">兽用疫苗查询 兽用疫苗查询网站</a></li>
+                        <li class="py-2"><a href="/news/article-71002.htm" title="宠物领养电话（宠物领养站哪里有）">宠物领养电话（宠物领养站哪里有）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-node-share.htm" title="「3月11日」最高速度18M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费订阅地址分享">「3月11日」最高速度18M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-71001.htm" title="YARN线上动态资源调优">YARN线上动态资源调优</a></li>
+                        <li class="py-2"><a href="/news/article-94975.htm" title="动物医院有哪些岗位工作好（动物医院有哪些岗位工作好干）">动物医院有哪些岗位工作好（动物医院有哪些岗位工作好干）</a></li>
+                        <li class="py-2"><a href="/news/article-86119.htm" title="动物疫苗的重要性和意义作文（动物疫苗的重要性和意义作文题目）">动物疫苗的重要性和意义作文（动物疫苗的重要性和意义作文题目）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+    </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                FreeShadowrocket免费机场官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/purecounter/purecounter.js"></script>
+    <script src="/assets/website/js/frontend/freeshadowrocket/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/freeshadowrocket/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
