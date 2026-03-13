@@ -1,4 +1,4 @@
-# 「3月6日」最高速度21M/S，2025年Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点每天更新免费订阅地址分享  更新时间 2026-03-06 08:14:35
+# 「3月13日」最高速度21.1M/S，2025年Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点每天更新免费订阅地址分享  更新时间 2026-03-13 10:00:00
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://freeshadowrocket.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://freeshadowrocket.github.io/uploads/2026/03/0-20260306.yaml
-- https://freeshadowrocket.github.io/uploads/2026/03/1-20260306.yaml
-- https://freeshadowrocket.github.io/uploads/2026/03/2-20260306.yaml
-- https://freeshadowrocket.github.io/uploads/2026/03/3-20260306.yaml
-- https://freeshadowrocket.github.io/uploads/2026/03/4-20260306.yaml
+- https://freeshadowrocket.github.io/uploads/2026/03/0-20260313.yaml
+- https://freeshadowrocket.github.io/uploads/2026/03/1-20260313.yaml
+- https://freeshadowrocket.github.io/uploads/2026/03/2-20260313.yaml
+- https://freeshadowrocket.github.io/uploads/2026/03/3-20260313.yaml
+- https://freeshadowrocket.github.io/uploads/2026/03/4-20260313.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://freeshadowrocket.github.io/uploads/2026/03/0-20260306.txt
-- https://freeshadowrocket.github.io/uploads/2026/03/1-20260306.txt
-- https://freeshadowrocket.github.io/uploads/2026/03/2-20260306.txt
-- https://freeshadowrocket.github.io/uploads/2026/03/3-20260306.txt
-- https://freeshadowrocket.github.io/uploads/2026/03/4-20260306.txt
+- https://freeshadowrocket.github.io/uploads/2026/03/0-20260313.txt
+- https://freeshadowrocket.github.io/uploads/2026/03/1-20260313.txt
+- https://freeshadowrocket.github.io/uploads/2026/03/2-20260313.txt
+- https://freeshadowrocket.github.io/uploads/2026/03/3-20260313.txt
+- https://freeshadowrocket.github.io/uploads/2026/03/4-20260313.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://freeshadowrocket.github.io/uploads/2026/03/20260306.json
+- https://freeshadowrocket.github.io/uploads/2026/03/20260313.json
 
 ## 更多Clash节点订阅 ：
 
