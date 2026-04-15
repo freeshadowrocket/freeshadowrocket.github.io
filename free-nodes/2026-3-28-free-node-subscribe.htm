@@ -290,9 +290,29 @@ A：Shadowsocks简单高效，适合多数用户；V2Ray抗封锁强，适合对
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 的 QUIC 多路复用在游戏中有什么优势？</h5></div>
+    <div class="panel-body">
+        QUIC 多路复用减少握手次数和延迟，适合高频短连接场景，如游戏和即时通讯。它能提高吞吐量和连接稳定性，在高丢包或高延迟环境下保持低延迟网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 支持节点批量更新吗？</h5></div>
+    <div class="panel-body">
+        支持。Nekoray 可通过订阅 URL 批量下载最新节点并替换旧节点。结合定时更新功能，可保持节点列表最新，减少手动维护和配置工作。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 的节点订阅更新是否可定时执行？</h5></div>
     <div class="panel-body">
         是的。Nekoray 可以设置订阅更新频率，如每天或每小时。程序会自动下载更新节点并替换旧节点，保证用户始终使用最新线路。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 能否手动添加节点？</h5></div>
+    <div class="panel-body">
+        Potatso Lite 支持手动添加 Shadowsocks 节点。用户在“配置”中选择添加节点，输入服务器、端口、加密方式等信息即可建立连接，适合手动管理单个线路。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 是否可以与 Shadowsocks 客户端共存？</h5></div>
+    <div class="panel-body">
+        可以。Nekobox 配置独立，不影响其他客户端运行。用户可以同时使用 Shadowsocks、Clash 等客户端，通过策略组或分流规则选择合适节点，互不干扰。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的多出口节点如何优化访问速度？</h5></div>
@@ -305,19 +325,9 @@ A：Shadowsocks简单高效，适合多数用户；V2Ray抗封锁强，适合对
         根据网络封锁情况选择合适协议和混淆组合，如 tls1.2_ticket_auth 模拟 HTTPS 流量。合理组合可提高抗封锁能力和稳定性，保证节点长期可用并优化网络连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 能否手动添加节点？</h5></div>
+    <div class="panel-heading"><h5>Mihomo 节点分组如何保证低延迟？</h5></div>
     <div class="panel-body">
-        Potatso Lite 支持手动添加 Shadowsocks 节点。用户在“配置”中选择添加节点，输入服务器、端口、加密方式等信息即可建立连接，适合手动管理单个线路。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 是否支持延迟排序节点？</h5></div>
-    <div class="panel-body">
-        支持。Matsuri 会自动测试节点延迟并按结果排序。用户可快速选择延迟最低或速度最快的节点，提高网络访问速度，尤其适合游戏或视频场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的 QUIC 多路复用在游戏中有什么优势？</h5></div>
-    <div class="panel-body">
-        QUIC 多路复用减少握手次数和延迟，适合高频短连接场景，如游戏和即时通讯。它能提高吞吐量和连接稳定性，在高丢包或高延迟环境下保持低延迟网络体验。<hr />    </div>
+        将节点按延迟、地区或用途分组，并启用策略组，系统会根据节点延迟和健康状态自动选择最佳节点。保证网页浏览、视频播放和游戏流量的低延迟和稳定连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
@@ -325,19 +335,9 @@ A：Shadowsocks简单高效，适合多数用户；V2Ray抗封锁强，适合对
         PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否可以与 Shadowsocks 客户端共存？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 是否支持延迟排序节点？</h5></div>
     <div class="panel-body">
-        可以。Nekobox 配置独立，不影响其他客户端运行。用户可以同时使用 Shadowsocks、Clash 等客户端，通过策略组或分流规则选择合适节点，互不干扰。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 节点分组如何保证低延迟？</h5></div>
-    <div class="panel-body">
-        将节点按延迟、地区或用途分组，并启用策略组，系统会根据节点延迟和健康状态自动选择最佳节点。保证网页浏览、视频播放和游戏流量的低延迟和稳定连接。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 支持节点批量更新吗？</h5></div>
-    <div class="panel-body">
-        支持。Nekoray 可通过订阅 URL 批量下载最新节点并替换旧节点。结合定时更新功能，可保持节点列表最新，减少手动维护和配置工作。    </div>
+        支持。Matsuri 会自动测试节点延迟并按结果排序。用户可快速选择延迟最低或速度最快的节点，提高网络访问速度，尤其适合游戏或视频场景。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -366,16 +366,16 @@ A：Shadowsocks简单高效，适合多数用户；V2Ray抗封锁强，适合对
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-7-free-node-subscribe.htm" title="「3月7日」最高速度18.4M/S，2025年V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点每天更新免费订阅地址分享">「3月7日」最高速度18.4M/S，2025年V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-26-free-ssr-subscribe.htm" title="「3月26日」最高速度21M/S，2025年SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点每天更新免费订阅地址分享">「3月26日」最高速度21M/S，2025年SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-30-free-shadowrocket-node.htm" title="「3月30日」最高速度19.1M/S，2025年Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点每天更新免费订阅地址分享">「3月30日」最高速度19.1M/S，2025年Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-11-free-high-speed-nodes.htm" title="「3月11日」最高速度18.6M/S，2025年SSR节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点每天更新免费订阅地址分享">「3月11日」最高速度18.6M/S，2025年SSR节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-12-shadowrocket-node.htm" title="「3月12日」最高速度18.3M/S，2025年SSR节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点每天更新免费订阅地址分享">「3月12日」最高速度18.3M/S，2025年SSR节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-8-free-node-subscribe.htm" title="「3月8日」最高速度19.8M/S，2025年SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点每天更新免费订阅地址分享">「3月8日」最高速度19.8M/S，2025年SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点每天更新免费订阅地址分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-3-29-node-share-links.htm" title="「3月29日」最高速度21M/S，2025年Trojan节点/SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点每天更新免费订阅地址分享">「3月29日」最高速度21M/S，2025年Trojan节点/SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-27-free-ssr-node.htm" title="「3月27日」最高速度22.5M/S，2025年Shadowrocket节点/Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点每天更新免费订阅地址分享">「3月27日」最高速度22.5M/S，2025年Shadowrocket节点/Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-17-shadowrocket-node.htm" title="「3月17日」最高速度19.3M/S，2025年Singbox节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点每天更新免费订阅地址分享">「3月17日」最高速度19.3M/S，2025年Singbox节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-16-clash-v2ray-ss-ssr.htm" title="「3月16日」最高速度19.8M/S，2025年V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点每天更新免费订阅地址分享">「3月16日」最高速度19.8M/S，2025年V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点每天更新免费订阅地址分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-3-6-free-shadowrocket-node.htm" title="「3月6日」最高速度20.7M/S，2025年Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点每天更新免费订阅地址分享">「3月6日」最高速度20.7M/S，2025年Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-25-free-shadowrocket-node.htm" title="「3月25日」最高速度18.5M/S，2025年Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点每天更新免费订阅地址分享">「3月25日」最高速度18.5M/S，2025年Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-22-free-subscribe-node.htm" title="「3月22日」最高速度22.1M/S，2025年Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点每天更新免费订阅地址分享">「3月22日」最高速度22.1M/S，2025年Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-15-shadowrocket-node.htm" title="「3月15日」最高速度20.8M/S，2025年Trojan节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费订阅地址分享">「3月15日」最高速度20.8M/S，2025年Trojan节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-5-shadowrocket-node.htm" title="「3月5日」最高速度21.2M/S，2025年SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点每天更新免费订阅地址分享">「3月5日」最高速度21.2M/S，2025年SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-8-free-node-subscribe.htm" title="「3月8日」最高速度19.8M/S，2025年SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点每天更新免费订阅地址分享">「3月8日」最高速度19.8M/S，2025年SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-9-node-share-links.htm" title="「3月9日」最高速度22.4M/S，2025年Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点每天更新免费订阅地址分享">「3月9日」最高速度22.4M/S，2025年Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-11-free-high-speed-nodes.htm" title="「3月11日」最高速度18.6M/S，2025年SSR节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点每天更新免费订阅地址分享">「3月11日」最高速度18.6M/S，2025年SSR节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点每天更新免费订阅地址分享</a></li>
                     </ul>
     </div>
 </div>
