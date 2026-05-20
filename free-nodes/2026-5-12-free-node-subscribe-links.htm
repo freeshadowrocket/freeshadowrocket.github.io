@@ -187,6 +187,11 @@ tcping your_v2ray_server_ip port</pre></div></li><li><p><strong>路由追踪</st
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 的 QUIC 模式相比 TCP 有哪些优势？</h5></div>
+    <div class="panel-body">
+        QUIC 协议基于 UDP，可减少握手延迟并在高丢包环境下保持较好体验。Hysteria2 对 QUIC 进行了优化，支持自适应拥塞控制与加密，能在移动网络中比 TCP 拥有更快的响应速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 中的 alterId 是什么，现在还有必要配置吗？</h5></div>
     <div class="panel-body">
         alterId 曾用于 VMess 的用户混淆机制以防止重放攻击，但在 V2Ray 新版本与 VLess 出现后，alterId 已不再推荐使用。现代配置多使用 UUID 或直接迁移至 VLess/XTLS 以获得更好性能与安全性。<hr />    </div>
@@ -197,19 +202,9 @@ tcping your_v2ray_server_ip port</pre></div></li><li><p><strong>路由追踪</st
         节点分类可以按地区、延迟或用途分组，结合策略组实现自动分流。这样可以快速选择最佳节点，管理大量节点更加高效，同时提升访问速度和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的 QUIC 模式相比 TCP 有哪些优势？</h5></div>
-    <div class="panel-body">
-        QUIC 协议基于 UDP，可减少握手延迟并在高丢包环境下保持较好体验。Hysteria2 对 QUIC 进行了优化，支持自适应拥塞控制与加密，能在移动网络中比 TCP 拥有更快的响应速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 如何导入 V2Ray 节点？</h5></div>
     <div class="panel-body">
         打开 Nekoray 客户端后，点击“导入配置”，选择 V2Ray 或 Clash 类型的订阅链接。程序会自动解析节点列表，用户可一键连接或进行延迟测试。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 可以管理多少个节点？</h5></div>
-    <div class="panel-body">
-        Potatso Lite 可以管理数十个节点，适合轻量用户使用。虽然不支持批量自动更新，但可以手动添加和删除节点，结合策略组实现基本分流和管理功能。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 如何自动切换最优节点？</h5></div>
@@ -217,9 +212,14 @@ tcping your_v2ray_server_ip port</pre></div></li><li><p><strong>路由追踪</st
         PassWall2 会定期测试节点延迟和丢包率，并结合策略组自动切换到最优节点。无需手动干预即可保证网页、视频和游戏流量高速稳定访问，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 可以自定义路由规则吗？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的延迟测试如何影响策略组选择？</h5></div>
     <div class="panel-body">
-        支持。用户可通过界面或配置文件定义路由规则，按域名、IP 或端口匹配不同节点，实现流量分流。自定义规则增强了网络访问灵活性和安全性。<hr />    </div>
+        PassWall2 会根据节点延迟结果更新策略组的优先节点，自动选择延迟最低的节点处理流量。这样可以优化访问速度，提高网页浏览、视频和游戏体验的稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 可以管理多少个节点？</h5></div>
+    <div class="panel-body">
+        Potatso Lite 可以管理数十个节点，适合轻量用户使用。虽然不支持批量自动更新，但可以手动添加和删除节点，结合策略组实现基本分流和管理功能。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的端口转发功能如何开启？</h5></div>
@@ -227,14 +227,14 @@ tcping your_v2ray_server_ip port</pre></div></li><li><p><strong>路由追踪</st
         在服务器端配置文件中启用 port_forwarding 参数并指定目标端口与地址。确保防火墙开放转发端口，客户端使用对应端口连接即可实现流量中继。此功能常用于内网穿透或端口复用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 可以自定义路由规则吗？</h5></div>
     <div class="panel-body">
-        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
+        支持。用户可通过界面或配置文件定义路由规则，按域名、IP 或端口匹配不同节点，实现流量分流。自定义规则增强了网络访问灵活性和安全性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的延迟测试如何影响策略组选择？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
     <div class="panel-body">
-        PassWall2 会根据节点延迟结果更新策略组的优先节点，自动选择延迟最低的节点处理流量。这样可以优化访问速度，提高网页浏览、视频和游戏体验的稳定性。    </div>
+        在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -263,16 +263,16 @@ tcping your_v2ray_server_ip port</pre></div></li><li><p><strong>路由追踪</st
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-4-24-clash-v2ray-ss-ssr.htm" title="「4月24日」最高速度22M/S，2025年Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点每天更新免费订阅地址分享">「4月24日」最高速度22M/S，2025年Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-19-shadowrocket-node.htm" title="「4月19日」最高速度19.8M/S，2025年Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点每天更新免费订阅地址分享">「4月19日」最高速度19.8M/S，2025年Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-17-free-ssr-subscribe.htm" title="「5月17日」最高速度22M/S，2025年Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点每天更新免费订阅地址分享">「5月17日」最高速度22M/S，2025年Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-15-free-node-subscribe-links.htm" title="「4月15日」最高速度18.5M/S，2025年Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点每天更新免费订阅地址分享">「4月15日」最高速度18.5M/S，2025年Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-14-free-ssr-node.htm" title="「4月14日」最高速度20.5M/S，2025年V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点每天更新免费订阅地址分享">「4月14日」最高速度20.5M/S，2025年V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-21-shadowrocket-node.htm" title="「4月21日」最高速度22.1M/S，2025年Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点每天更新免费订阅地址分享">「4月21日」最高速度22.1M/S，2025年Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点每天更新免费订阅地址分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-13-free-subscribe-node.htm" title="「4月13日」最高速度20.1M/S，2025年Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点每天更新免费订阅地址分享">「4月13日」最高速度20.1M/S，2025年Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-29-free-subscribe-node.htm" title="「4月29日」最高速度19.4M/S，2025年Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点每天更新免费订阅地址分享">「4月29日」最高速度19.4M/S，2025年Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-18-clash-v2ray-ss-ssr.htm" title="「4月18日」最高速度19.6M/S，2025年Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/Trojan节点/SSR节点每天更新免费订阅地址分享">「4月18日」最高速度19.6M/S，2025年Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/Trojan节点/SSR节点每天更新免费订阅地址分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-16-free-ssr-subscribe.htm" title="「4月16日」最高速度22.3M/S，2025年Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点每天更新免费订阅地址分享">「4月16日」最高速度22.3M/S，2025年Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-5-free-subscribe-node.htm" title="「5月5日」最高速度18M/S，2025年Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点每天更新免费订阅地址分享">「5月5日」最高速度18M/S，2025年Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-1-node-share.htm" title="「5月1日」最高速度22.2M/S，2025年V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/SSR节点每天更新免费订阅地址分享">「5月1日」最高速度22.2M/S，2025年V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/SSR节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-30-free-node-subscribe.htm" title="「4月30日」最高速度21M/S，2025年Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点每天更新免费订阅地址分享">「4月30日」最高速度21M/S，2025年Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-12-free-node-subscribe.htm" title="「4月12日」最高速度18.3M/S，2025年Trojan节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点每天更新免费订阅地址分享">「4月12日」最高速度18.3M/S，2025年Trojan节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点每天更新免费订阅地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-3-free-ssr-subscribe.htm" title="「5月3日」最高速度19.3M/S，2025年Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点每天更新免费订阅地址分享">「5月3日」最高速度19.3M/S，2025年Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点每天更新免费订阅地址分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-23-node-share.htm" title="「4月23日」最高速度19.8M/S，2025年V2ray节点/Singbox节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点每天更新免费订阅地址分享">「4月23日」最高速度19.8M/S，2025年V2ray节点/Singbox节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点每天更新免费订阅地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-28-free-high-speed-nodes.htm" title="「4月28日」最高速度22.1M/S，2025年Singbox节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点每天更新免费订阅地址分享">「4月28日」最高速度22.1M/S，2025年Singbox节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点每天更新免费订阅地址分享</a></li>
                     </ul>
     </div>
 </div>
@@ -284,7 +284,7 @@ tcping your_v2ray_server_ip port</pre></div></li><li><p><strong>路由追踪</st
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
